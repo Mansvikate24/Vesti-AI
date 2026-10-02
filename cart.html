@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View items in your VestiAI shopping bag and proceed to checkout.">
+    <title>Shopping Bag | VestiAI</title>
+
+    <!-- Global Luxury CSS -->
+    <link rel="stylesheet" href="css/global.css">
+</head>
+
+<body class="auth-guard-pending">
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="home.html" class="logo">
+                Vesti<span>AI</span> <span class="sparkle">✨</span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="home.html">Home</a>
+                <a href="home.html#categories">Categories</a>
+                <a href="home.html#products">Collection</a>
+                <a href="tryon.html">Virtual Try-On</a>
+                <a href="orders.html">Orders</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="cart.html" class="nav-cart-btn" aria-label="Shopping Cart">
+                    🛒
+                </a>
+                <a href="login.html" class="login-btn">Login</a>
+                <a href="register.html" class="signup-btn">Sign Up</a>
+            </div>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+        </div>
+    </header>
+
+    <!-- ================= SHOPPING BAG ================= -->
+    <main class="cart-page">
+        <div class="container">
+
+            <div class="page-title">
+                <span class="section-badge">YOUR SELECTIONS</span>
+                <h1 class="font-heading">Shopping Bag</h1>
+                <p>Review your selected garments before effortless checkout.</p>
+            </div>
+
+            <!-- Loading indicator -->
+            <div id="loadingCart" style="text-align: center; padding: 60px; font-size: 1.15rem; color: var(--text-muted);">
+                Loading your shopping bag... ✨
+            </div>
+
+            <!-- Empty Cart State -->
+            <div id="emptyCart" class="empty-state" style="display: none;">
+                <div class="empty-state-icon">🛍️</div>
+                <h2 class="font-heading">Your bag is currently empty</h2>
+                <p>Discover our new arrivals and try them on in real-time before adding to your bag.</p>
+                <a href="home.html#products" class="primary-btn">
+                    Explore Collection →
+                </a>
+            </div>
+
+            <!-- Cart Layout -->
+            <div id="cartContainer" class="cart-layout" style="display: none;">
+                
+                <!-- Items list -->
+                <div id="cartItems" class="cart-items-list">
+                    <!-- Populated dynamically by cart.js -->
+                </div>
+
+                <!-- Order Summary -->
+                <div class="summary-card">
+                    <h2 class="font-heading">Order Summary</h2>
+
+                    <div class="summary-row">
+                        <span>Total Items</span>
+                        <strong id="totalItems">0</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Bag Subtotal</span>
+                        <span id="subtotal">₹0</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Express Delivery</span>
+                        <span style="color: var(--success); font-weight: 700;">FREE</span>
+                    </div>
+
+                    <div class="summary-row total">
+                        <span>Total Amount</span>
+                        <span id="totalPrice" style="color: var(--primary);">₹0</span>
+                    </div>
+
+                    <button type="button" id="checkoutButton" class="primary-btn" style="width: 100%; margin-top: 24px; padding: 16px;">
+                        Proceed to Checkout →
+                    </button>
+
+                    <div style="margin-top: 20px; font-size: 0.82rem; color: var(--text-muted); text-align: center;">
+                        🔒 Secure 256-Bit Encrypted Checkout
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="home.html" class="logo">Vesti<span>AI</span></a>
+                <p>Redefining digital retail through computer vision and interactive AI try-on technology.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Explore</h3>
+                <a href="home.html">Home</a>
+                <a href="home.html#products">Collection</a>
+                <a href="tryon.html">Virtual Studio</a>
+            </div>
+            <div class="footer-column">
+                <h3>Account</h3>
+                <a href="login.html">Login</a>
+                <a href="register.html">Sign Up</a>
+                <a href="cart.html">Shopping Bag</a>
+                <a href="orders.html">Orders</a>
+            </div>
+            <div class="footer-column">
+                <h3>Support</h3>
+                <p>📧 support@vestiai.com</p>
+                <p>📍 AI Virtual Dressing Lab</p>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>© 2026 VestiAI. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script type="module" src="js/auth-guard.js"></script>
+    <script type="module" src="js/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vesti-AI Business Model — Sustainable revenue streams, unit economics calculator, go-to-market strategy, and KPI roadmap for AI virtual dressing room technology.">
+    <title>Business Model & Unit Economics | Vesti-AI</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/logo/vesti-ai-icon.svg">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/global.css">
+</head>
+
+<body>
+
+    <!-- ================= ANNOUNCEMENT BAR ================= -->
+    <div class="announcement-bar">
+        <span class="badge">Business Strategy</span>
+        <span>Transparent startup economics, pricing architecture, and market validation roadmap.</span>
+    </div>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo-wrap" aria-label="Vesti-AI Home">
+                <img src="assets/logo/vesti-ai-logo.svg" alt="Vesti-AI Logo" class="brand-logo-svg">
+            </a>
+
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="index.html#how-it-works">How It Works</a>
+                <a href="tryon.html">Virtual Try-On</a>
+                <a href="shop.html">Shop Dresses</a>
+                <a href="business.html" class="active">Business Model</a>
+                <a href="technology.html">Technology</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="cart.html" class="nav-cart-btn" aria-label="Shopping Cart">
+                    🛍️
+                </a>
+                <a href="login.html" class="login-btn">Login</a>
+                <a href="register.html" class="signup-btn">Get Started</a>
+            </div>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">☰</button>
+        </div>
+    </header>
+
+    <main style="padding: 50px 0 80px;">
+        <div class="container">
+
+            <!-- Title & Context Badge -->
+            <div style="text-align: center; max-width: 820px; margin: 0 auto 50px;">
+                <span class="section-badge">STRATEGY & FEASIBILITY ANALYSIS</span>
+                <h1 class="font-heading" style="font-size: clamp(2.2rem, 3.5vw, 3.2rem); color: #111018; margin: 12px 0;">
+                    Vesti-AI Business Model & Economics
+                </h1>
+                <p style="color: #5e5b72; font-size: 1.1rem; line-height: 1.6;">
+                    Explore our proposed commercial architecture, B2B SaaS tiers, direct e-commerce margins, and an interactive unit economics simulation designed for startup evaluation.
+                </p>
+            </div>
+
+            <!-- ================= A. BUSINESS OVERVIEW ================= -->
+            <section style="margin-bottom: 60px;">
+                <div style="background: #ffffff; border: 1px solid #EAE8F2; border-radius: var(--radius-xl); padding: 36px 40px; box-shadow: 0 10px 30px rgba(17,16,24,0.03);">
+                    <span style="font-size: 0.8rem; font-weight: 700; color: #7657FF; text-transform: uppercase; letter-spacing: 1px;">Section A</span>
+                    <h2 class="font-heading" style="font-size: 1.8rem; color: #111018; margin: 6px 0 16px;">
+                        Business Overview & Target Segments
+                    </h2>
+                    <p style="color: #5e5b72; font-size: 1rem; line-height: 1.6; margin-bottom: 24px;">
+                        Vesti-AI is a fashion technology platform conceptualized to help fashion retailers and customers explore digital garment previews. Rather than building solely a standalone retail store, Vesti-AI combines an interactive customer portal with a dual-sided ecosystem supporting independent boutiques and fashion brands.
+                    </p>
+
+                    <h3 style="font-size: 1.15rem; color: #111018; margin-bottom: 14px;">Potential Customer & Partner Groups:</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px;">
+                        <div style="background: #FAF9FF; border: 1px solid #EAE8F2; border-radius: var(--radius-md); padding: 18px;">
+                            <strong style="color: #7657FF; display: block; margin-bottom: 4px;">1. Online Fashion Shoppers</strong>
+                            <span style="font-size: 0.88rem; color: #5e5b72;">Individuals looking to visualize dress styles on their silhouette from the convenience of their laptop or smartphone.</span>
+                        </div>
+                        <div style="background: #FAF9FF; border: 1px solid #EAE8F2; border-radius: var(--radius-md); padding: 18px;">
+                            <strong style="color: #7657FF; display: block; margin-bottom: 4px;">2. Independent Dress Boutiques</strong>
+                            <span style="font-size: 0.88rem; color: #5e5b72;">Local boutiques seeking affordable digital engagement tools and QR-enabled in-store mirror kiosks.</span>
+                        </div>
+                        <div style="background: #FAF9FF; border: 1px solid #EAE8F2; border-radius: var(--radius-md); padding: 18px;">
+                            <strong style="color: #7657FF; display: block; margin-bottom: 4px;">3. Emerging Fashion Brands</strong>
+                            <span style="font-size: 0.88rem; color: #5e5b72;">Direct-to-consumer (D2C) apparel labels wanting to differentiate their online catalog experience.</span>
+                        </div>
+                        <div style="background: #FAF9FF; border: 1px solid #EAE8F2; border-radius: var(--radius-md); padding: 18px;">
+                            <strong style="color: #7657FF; display: block; margin-bottom: 4px;">4. E-commerce Marketplaces</strong>
+                            <span style="font-size: 0.88rem; color: #5e5b72;">Web platforms interested in integrating client-side virtual try-on widgets into their existing checkout funnels.</span>
+                        </div>
+                        <div style="background: #FAF9FF; border: 1px solid #EAE8F2; border-radius: var(--radius-md); padding: 18px;">
+                            <strong style="color: #7657FF; display: block; margin-bottom: 4px;">5. Shopping Malls & Experiential Retail</strong>
+                            <span style="font-size: 0.88rem; color: #5e5b72;">Physical retail centers seeking interactive touchscreens or smart-mirror QR installations.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= B. VALUE PROPOSITION ================= -->
+            <section style="margin-bottom: 60px;">
+                <div style="background: #ffffff; border: 1px solid #EAE8F2; border-radius: var(--radius-xl); padding: 36px 40px;">
+                    <span style="font-size: 0.8rem; font-weight: 700; color: #7657FF; text-transform: uppercase; letter-spacing: 1px;">Section B</span>
+                    <h2 class="font-heading" style="font-size: 1.8rem; color: #111018; margin: 6px 0 16px;">
+                        Value Proposition
+                    </h2>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;" class="hero-grid-responsive">
+                        <!-- For Customers -->
+                        <div style="background: #FAF9FF; border: 1px solid #EAE8F2; border-radius: var(--radius-lg); padding: 26px;">
+                            <h3 style="color: #111018; font-size: 1.2rem; display: flex; align-items: center; gap: 8px; margin-bottom: 14px;">
+                                <span>👗</span> For Customers
+                            </h3>
+                            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem; color: #4a4563;">
+                                <li>✨ <strong>Interactive Dress Previews:</strong> Real-time alignment of transparent dress assets over live camera video or demo mannequins.</li>
+                                <li>🔍 <strong>Convenient Product Discovery:</strong> Filter dresses by color harmony, style tags, and season before purchasing.</li>
+                                <li>🎨 <strong>Personalized Shopping:</strong> Tailor Fit sliders allow manual scaling and fine-tuning to reflect personal comfort.</li>
+                                <li>⚖️ <strong>Easy Garment Comparison:</strong> Rapidly switch between silhouettes without waiting for physical dressing rooms.</li>
+                            </ul>
+                        </div>
+
+                        <!-- For Retailers -->
+                        <div style="background: #FAF9FF; border: 1px solid #EAE8F2; border-radius: var(--radius-lg); padding: 26px;">
+                            <h3 style="color: #111018; font-size: 1.2rem; display: flex; align-items: center; gap: 8px; margin-bottom: 14px;">
+                                <span>🏪</span> For Retailers & Boutiques
+                            </h3>
+                            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem; color: #4a4563;">
+                                <li>📱 <strong>QR-Linked In-Store Discovery:</strong> Physical hangtags enable shoppers to trigger virtual try-ons directly on their own phones.</li>
+                                <li>💡 <strong>Digital Fashion Modernization:</strong> Low-cost, web-based adoption without requiring specialized 3D scanner hardware.</li>
+                                <li>📈 <strong>Potential Engagement Improvements:</strong> Interactive visuals foster playful exploration and word-of-mouth social sharing.</li>
+                                <li>📊 <strong>Garment Analytics Framework:</strong> Track try-on session frequency and wishlist conversion to identify popular silhouettes.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Honest Disclosure -->
+                    <div class="demo-scope-notice" style="margin-top: 24px;">
+                        <span>⚠️</span>
+                        <div>
+                            <strong>Evidence Transparency Note:</strong> While virtual try-on conceptually aims to improve buyer confidence, Vesti-AI makes no unverified empirical claims regarding proven sales lift or exact return reduction percentages at this pre-launch prototype stage.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= C. REVENUE MODEL ================= -->
+            <section style="margin-bottom: 60px;">
+                <div style="background: #ffffff; border: 1px solid #EAE8F2; border-radius: var(--radius-xl); padding: 36px 40px;">
+                    <span style="font-size: 0.8rem; font-weight: 700; color: #7657FF; text-transform: uppercase; letter-spacing: 1px;">Section C</span>
+                    <h2 class="font-heading" style="font-size: 1.8rem; color: #111018; margin: 6px 0 16px;">
+                        Proposed Revenue Streams
+                    </h2>
+                    <p style="color: #5e5b72; font-size: 1rem; line-height: 1.6; margin-bottom: 24px;">
+                        Vesti-AI is designed with a hybrid B2C/B2B business model. All listed revenue channels represent proposed hypotheses for financial validation:
+                    </p>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                        <!-- Stream 1 -->
+                        <div class="benefit-card">
+                            <div class="benefit-icon">🛒</div>
+                            <h3 style="font-size: 1.15rem; margin-bottom: 8px;">1. Direct Dress Sales</h3>
+                            <p style="font-size: 0.88rem; color: #5e5b72; line-height: 1.5;">
+                                Retail gross margin (25%–35%) earned by selling curated dresses and gowns directly through the Vesti-AI e-commerce storefront.
+                            </p>
+                        </div>
+
+                        <!-- Stream 2 -->
+                        <div class="benefit-card">
+                            <div class="benefit-icon">🏢</div>
+                            <h3 style="font-size: 1.15rem; margin-bottom: 8px;">2. Retailer Subscriptions</h3>
+                            <p style="font-size: 0.88rem; color: #5e5b72; line-height: 1.5;">
+                                Recurring monthly SaaS subscriptions from participating fashion boutiques for catalog hosting, QR code generation, and studio integration.
+                            </p>
+                        </div>
+
+                        <!-- Stream 3 -->
+                        <div class="benefit-card">
+                            <div class="benefit-icon">💻</div>
+                            <h3 style="font-size: 1.15rem; margin-bottom: 8px;">3. B2B Technology Licensing</h3>
+                            <p style="font-size: 0.88rem; color: #5e5b72; line-height: 1.5;">
+                                Licensing the browser-based MediaPipe alignment engine and UI components as an embeddable SDK for third-party e-commerce stores.
+                            </p>
+                        </div>
+
+                        <!-- Stream 4 -->
+                        <div class="benefit-card">
+                            <div class="benefit-icon">📊</div>
+                            <h3 style="font-size: 1.15rem; margin-bottom: 8px;">4. Premium Retailer Features</h3>
+                            <p style="font-size: 0.88rem; color: #5e5b72; line-height: 1.5;">
+                                Advanced add-ons including custom branding, high-resolution garment asset processing, advanced traffic analytics, and priority server routing.
+                            </p>
+                        </div>
+
+                        <!-- Stream 5 -->
+                        <div class="benefit-card">
+                            <div class="benefit-icon">🏷️</div>
+                            <h3 style="font-size: 1.15rem; margin-bottom: 8px;">5. White-Label Solutions</h3>
+                            <p style="font-size: 0.88rem; color: #5e5b72; line-height: 1.5;">
+                                Tailored dressing room portals branded for larger department chains, regional retail groups, or mall kiosks.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= D. EXAMPLE PRICING MODEL ================= -->
+            <section style="margin-bottom: 60px;">
+                <div style="background: #ffffff; border: 1px solid #EAE8F2; border-radius: var(--radius-xl); padding: 36px 40px;">
+                    <span style="font-size: 0.8rem; font-weight: 700; color: #7657FF; text-transform: uppercase; letter-spacing: 1px;">Section D</span>
+                    <h2 class="font-heading" style="font-size: 1.8rem; color: #111018; margin: 6px 0 8px;">
+                        Illustrative B2B Retailer Pricing Plans
+                    </h2>
+                    <p style="color: #5e5b72; font-size: 0.95rem; margin-bottom: 24px;">
+                        Hypothetical pricing structure in Indian Rupees (INR) designed for startup pilot modeling.
+                    </p>
+
+                    <div class="pricing-grid">
+                        <!-- Starter Plan -->
+                        <div class="pricing-card">
+                            <h3 style="font-size: 1.3rem; color: #111018;">Starter Retailer</h3>
+                            <p style="font-size: 0.85rem; color: #64748b;">For independent boutiques beginning digital try-on testing</p>
+                            <div class="pricing-price">
+                                ₹999 <span>/ month</span>
+                            </div>
+                            <ul class="pricing-features">
+                                <li>✓ Up to 15 dress catalog items</li>
+                                <li>✓ 500 virtual try-on sessions / month</li>
+                                <li>✓ Standard QR code generator</li>
+                                <li>✓ Standard MediaPipe 2D alignment</li>
+                                <li>✓ Basic email support</li>
+                            </ul>
+                            <a href="contact.html?plan=starter" class="secondary-btn" style="width: 100%;">Inquire for Pilot</a>
+                        </div>
+
+                        <!-- Growth Plan (Featured) -->
+                        <div class="pricing-card featured">
+                            <span class="badge-plan">POPULAR PROPOSAL</span>
+                            <h3 style="font-size: 1.3rem; color: #111018;">Growth Retailer</h3>
+                            <p style="font-size: 0.85rem; color: #64748b;">For established apparel stores and growing designer labels</p>
+                            <div class="pricing-price">
+                                ₹2,999 <span>/ month</span>
+                            </div>
+                            <ul class="pricing-features">
+                                <li>✓ Up to 75 dress catalog items</li>
+                                <li>✓ 3,000 virtual try-on sessions / month</li>
+                                <li>✓ Dynamic QR hangtags with product sync</li>
+                                <li>✓ Tailor Fit manual slider suite</li>
+                                <li>✓ Basic try-on engagement analytics</li>
+                                <li>✓ Priority support & asset validation</li>
+                            </ul>
+                            <a href="contact.html?plan=growth" class="primary-btn" style="width: 100%;">Inquire for Pilot</a>
+                        </div>
+
+                        <!-- Enterprise Plan -->
+                        <div class="pricing-card">
+                            <h3 style="font-size: 1.3rem; color: #111018;">Enterprise Brand</h3>
+                            <p style="font-size: 0.85rem; color: #64748b;">For multi-outlet fashion chains and department stores</p>
+                            <div class="pricing-price">
+                                Custom <span>/ tiered</span>
+                            </div>
+                            <ul class="pricing-features">
+                                <li>✓ Unlimited dress catalog inventory</li>
+                                <li>✓ High-volume try-on API quotas</li>
+                                <li>✓ Custom domain & white-label UI</li>
+                                <li>✓ In-store smart mirror kiosk configuration</li>
+                                <li>✓ Dedicated database instance & SLA</li>
+                            </ul>
+                            <a href="contact.html?plan=enterprise" class="secondary-btn" style="width: 100%;">Contact Enterprise</a>
+                        </div>
+                    </div>
+
+                    <div style="font-size: 0.82rem; color: #8f8ba3; text-align: center; margin-top: 20px;">
+                        * Note: All subscription figures represent hypothetical estimates for financial modeling and academic review, not active market rates.
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= E. INTERACTIVE UNIT ECONOMICS CALCULATOR ================= -->
+            <section style="margin-bottom: 60px;" id="unit-economics">
+                <div class="calculator-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
+                        <div>
+                            <span style="font-size: 0.8rem; font-weight: 700; color: #7657FF; text-transform: uppercase; letter-spacing: 1px;">Section E</span>
+                            <h2 class="font-heading" style="font-size: 1.8rem; color: #111018; margin: 4px 0 0;">
+                                Interactive Unit Economics & Pro-Forma Calculator
+                            </h2>
+                            <p style="color: #5e5b72; font-size: 0.95rem; margin-top: 4px;">
+                                Adjust the parameters below to evaluate monthly operating margins and break-even feasibility.
+                            </p>
+                        </div>
+
+                        <!-- Preset Scenarios -->
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                            <button type="button" id="presetConservative" class="secondary-btn" style="padding: 6px 14px; font-size: 0.82rem;">Conservative Pilot</button>
+                            <button type="button" id="presetModerate" class="secondary-btn" style="padding: 6px 14px; font-size: 0.82rem;">Moderate Phase</button>
+                            <button type="button" id="presetGrowth" class="secondary-btn" style="padding: 6px 14px; font-size: 0.82rem;">Growth Phase</button>
+                        </div>
+                    </div>
+
+                    <div class="calc-grid">
+                        <!-- Input Column -->
+                        <div style="background: #faf9ff; border: 1px solid #EAE8F2; border-radius: var(--radius-lg); padding: 28px;">
+                            <h3 style="font-size: 1.1rem; color: #111018; margin-bottom: 18px; border-bottom: 1px solid #EAE8F2; padding-bottom: 8px;">
+                                ⚙️ Operational Inputs
+                            </h3>
+
+                            <div class="calc-input-group">
+                                <label for="numRetailers">
+                                    <span>Paying Retailers:</span>
+                                    <strong id="numRetailersVal" style="color: #7657FF;">15</strong>
+                                </label>
+                                <input type="range" id="numRetailers" min="1" max="150" value="15">
+                            </div>
+
+                            <div class="calc-input-group">
+                                <label for="subPrice">
+                                    <span>Monthly SaaS Fee (INR):</span>
+                                    <strong id="subPriceVal" style="color: #7657FF;">₹1,999</strong>
+                                </label>
+                                <input type="range" id="subPrice" min="499" max="9999" step="100" value="1999">
+                            </div>
+
+                            <div class="calc-input-group">
+                                <label for="dressesSold">
+                                    <span>Direct Dresses Sold / Mo:</span>
+                                    <strong id="dressesSoldVal" style="color: #7657FF;">120</strong>
+                                </label>
+                                <input type="range" id="dressesSold" min="0" max="1000" step="10" value="120">
+                            </div>
+
+                            <div class="calc-input-group">
+                                <label for="avgPrice">
+                                    <span>Avg Selling Price (ASP):</span>
+                                    <strong id="avgPriceVal" style="color: #7657FF;">₹2,499</strong>
+                                </label>
+                                <input type="range" id="avgPrice" min="999" max="9999" step="100" value="2499">
+                            </div>
+
+                            <div class="calc-input-group">
+                                <label for="grossMargin">
+                                    <span>Dress Gross Margin (%):</span>
+                                    <strong id="grossMarginVal" style="color: #7657FF;">30%</strong>
+                                </label>
+                                <input type="range" id="grossMargin" min="10" max="60" step="5" value="30">
+                            </div>
+
+                            <h4 style="font-size: 0.95rem; color: #111018; margin: 18px 0 10px;">Monthly Operating Costs (INR):</h4>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                                <div class="calc-input-group" style="margin-bottom: 0;">
+                                    <label style="font-size: 0.78rem;">Cloud & AI (₹)</label>
+                                    <input type="number" id="hostingCost" value="8500" min="0">
+                                </div>
+                                <div class="calc-input-group" style="margin-bottom: 0;">
+                                    <label style="font-size: 0.78rem;">Marketing (₹)</label>
+                                    <input type="number" id="marketingCost" value="20000" min="0">
+                                </div>
+                                <div class="calc-input-group" style="margin-bottom: 0;">
+                                    <label style="font-size: 0.78rem;">Other Ops (₹)</label>
+                                    <input type="number" id="otherCost" value="12000" min="0">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Results Output Column -->
+                        <div class="calc-results-card">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                                <h3 style="font-size: 1.15rem; color: #FAF9FF;">
+                                    📊 Estimated Projections
+                                </h3>
+                                <span id="outProfitStatus" class="status-badge tested">Estimated Net Profit</span>
+                            </div>
+
+                            <div class="calc-result-row">
+                                <span>Monthly Retailer SaaS Revenue</span>
+                                <strong id="outSubRevenue" style="color: #B9A7FF;">₹29,985</strong>
+                            </div>
+
+                            <div class="calc-result-row">
+                                <span>Direct Dress Sales GMV</span>
+                                <span id="outDressGross" style="color: #c4c1d6;">₹2,99,880</span>
+                            </div>
+
+                            <div class="calc-result-row">
+                                <span>Dress Margin Contribution</span>
+                                <strong id="outDressMarginRevenue" style="color: #B9A7FF;">₹89,964</strong>
+                            </div>
+
+                            <div class="calc-result-row" style="background: rgba(255,255,255,0.06); padding: 12px 14px; border-radius: var(--radius-sm); margin: 6px 0;">
+                                <span>Total Net Operating Revenue</span>
+                                <strong id="outTotalRevenue" style="color: #FAF9FF; font-size: 1.1rem;">₹1,19,949</strong>
+                            </div>
+
+                            <div class="calc-result-row">
+                                <span>Total Operating Expenses</span>
+                                <span id="outTotalExpenses" style="color: #f87171;">₹40,500</span>
+                            </div>
+
+                            <div class="calc-result-row highlight">
+                                <span>Estimated Net Monthly Profit/Loss</span>
+                                <span id="outProfitLoss">+₹79,449</span>
+                            </div>
+
+                            <div style="margin-top: 24px; padding: 12px 16px; background: rgba(255, 255, 255, 0.05); border-radius: var(--radius-md); font-size: 0.8rem; color: #9a96b3; line-height: 1.4;">
+                                💡 <em>Note:</em> In client-side MediaPipe implementations, browser devices perform pose inferencing, significantly mitigating heavy server GPU costs compared to centralized 3D rendering farms.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= F. GO-TO-MARKET STRATEGY ================= -->
+            <section style="margin-bottom: 60px;">
+                <div style="background: #ffffff; border: 1px solid #EAE8F2; border-radius: var(--radius-xl); padding: 36px 40px;">
+                    <span style="font-size: 0.8rem; font-weight: 700; color: #7657FF; text-transform: uppercase; letter-spacing: 1px;">Section F</span>
+                    <h2 class="font-heading" style="font-size: 1.8rem; color: #111018; margin: 6px 0 16px;">
+                        Go-To-Market Roadmap
+                    </h2>
+                    <p style="color: #5e5b72; font-size: 1rem; line-height: 1.6; margin-bottom: 24px;">
+                        Structured in 5 progressive phases to validate customer appeal, refine computer vision accuracy, and evaluate boutique adoption.
+                    </p>
+
+                    <div class="steps-timeline">
+                        <div class="step-card">
+                            <span class="step-number">P1</span>
+                            <h3 style="font-size: 1.1rem; color: #111018; margin-bottom: 6px;">Phase 1: Prototype</h3>
+                            <p style="font-size: 0.88rem; color: #5e5b72; line-height: 1.5;">
+                                Build & test functional browser prototype with MediaPipe Pose, Firebase database, and dress overlays.
+                            </p>
+                        </div>
+
+                        <div class="step-card">
+                            <span class="step-number">P2</span>
+                            <h3 style="font-size: 1.1rem; color: #111018; margin-bottom: 6px;">Phase 2: Boutique Pilots</h3>
+                            <p style="font-size: 0.88rem; color: #5e5b72; line-height: 1.5;">
+                                Run closed pilots with 3–5 boutique partners using QR hangtags and tablet mirror displays.
+                            </p>
+                        </div>
+
+                        <div class="step-card">
+                            <span class="step-number">P3</span>
+                            <h3 style="font-size: 1.1rem; color: #111018; margin-bottom: 6px;">Phase 3: Feedback & Tuning</h3>
+                            <p style="font-size: 0.88rem; color: #5e5b72; line-height: 1.5;">
+                                Collect user try-on feedback, test multi-angle lighting, and calibrate scaling accuracy heuristics.
+                            </p>
+                        </div>
+
+                        <div class="step-card">
+                            <span class="step-number">P4</span>
+                            <h3 style="font-size: 1.1rem; color: #111018; margin-bottom: 6px;">Phase 4: SaaS Introduction</h3>
+                            <p style="font-size: 0.88rem; color: #5e5b72; line-height: 1.5;">
+                                Launch self-serve boutique onboarding portal with Starter (₹999) and Growth (₹2,999) plans.
+                            </p>
+                        </div>
+
+                        <div class="step-card">
+                            <span class="step-number">P5</span>
+                            <h3 style="font-size: 1.1rem; color: #111018; margin-bottom: 6px;">Phase 5: Brand Partnerships</h3>
+                            <p style="font-size: 0.88rem; color: #5e5b72; line-height: 1.5;">
+                                Partner with larger regional e-commerce stores and evaluate 3D cloth deformation research.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= G. KEY PERFORMANCE INDICATORS ================= -->
+            <section style="margin-bottom: 40px;">
+                <div style="background: #ffffff; border: 1px solid #EAE8F2; border-radius: var(--radius-xl); padding: 36px 40px;">
+                    <span style="font-size: 0.8rem; font-weight: 700; color: #7657FF; text-transform: uppercase; letter-spacing: 1px;">Section G</span>
+                    <h2 class="font-heading" style="font-size: 1.8rem; color: #111018; margin: 6px 0 10px;">
+                        Key Performance Indicators (KPI Framework)
+                    </h2>
+                    <p style="color: #5e5b72; font-size: 0.95rem; margin-bottom: 24px;">
+                        The metrics Vesti-AI intends to measure systematically once commercially deployed:
+                    </p>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+                        <div style="background: #FAF9FF; border: 1px solid #EAE8F2; border-radius: var(--radius-md); padding: 18px;">
+                            <div style="font-size: 0.75rem; color: #7657FF; font-weight: 700; text-transform: uppercase;">Engagement</div>
+                            <div style="font-size: 1.1rem; font-weight: 700; color: #111018; margin: 4px 0;">MAU & Session Count</div>
+                            <p style="font-size: 0.82rem; color: #5e5b72;">Total monthly active users and number of virtual dressing room sessions launched.</p>
+                        </div>
+
+                        <div style="background: #FAF9FF; border: 1px solid #EAE8F2; border-radius: var(--radius-md); padding: 18px;">
+                            <div style="font-size: 0.75rem; color: #7657FF; font-weight: 700; text-transform: uppercase;">Conversion</div>
+                            <div style="font-size: 1.1rem; font-weight: 700; color: #111018; margin: 4px 0;">Try-On to Cart Rate</div>
+                            <p style="font-size: 0.82rem; color: #5e5b72;">Percentage of users who add a dress to their shopping bag after a try-on session.</p>
+                        </div>
+
+                        <div style="background: #FAF9FF; border: 1px solid #EAE8F2; border-radius: var(--radius-md); padding: 18px;">
+                            <div style="font-size: 0.75rem; color: #7657FF; font-weight: 700; text-transform: uppercase;">Checkout</div>
+                            <div style="font-size: 1.1rem; font-weight: 700; color: #111018; margin: 4px 0;">Completion Rate</div>
+                            <p style="font-size: 0.82rem; color: #5e5b72;">Proportion of initiated checkouts completed successfully through COD or UPI.</p>
+                        </div>
+
+                        <div style="background: #FAF9FF; border: 1px solid #EAE8F2; border-radius: var(--radius-md); padding: 18px;">
+                            <div style="font-size: 0.75rem; color: #7657FF; font-weight: 700; text-transform: uppercase;">B2B Health</div>
+                            <div style="font-size: 1.1rem; font-weight: 700; color: #111018; margin: 4px 0;">Retailer Retention & CAC</div>
+                            <p style="font-size: 0.82rem; color: #5e5b72;">Monthly subscription churn rate and customer acquisition cost across boutique tiers.</p>
+                        </div>
+
+                        <div style="background: #FAF9FF; border: 1px solid #EAE8F2; border-radius: var(--radius-md); padding: 18px;">
+                            <div style="font-size: 0.75rem; color: #7657FF; font-weight: 700; text-transform: uppercase;">Computer Vision</div>
+                            <div style="font-size: 1.1rem; font-weight: 700; color: #111018; margin: 4px 0;">Landmark Tracking Rate</div>
+                            <p style="font-size: 0.82rem; color: #5e5b72;">Fraction of camera frames with successful shoulder and hip pose identification without loss.</p>
+                        </div>
+
+                        <div style="background: #FAF9FF; border: 1px solid #EAE8F2; border-radius: var(--radius-md); padding: 18px;">
+                            <div style="font-size: 0.75rem; color: #7657FF; font-weight: 700; text-transform: uppercase;">Post-Purchase</div>
+                            <div style="font-size: 1.1rem; font-weight: 700; color: #111018; margin: 4px 0;">Estimated Return Rate</div>
+                            <p style="font-size: 0.82rem; color: #5e5b72;">Returns tracking compared against industry baseline where reliable customer return data exists.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="brand-logo-wrap" style="margin-bottom: 14px;">
+                    <img src="assets/logo/vesti-ai-logo.svg" alt="Vesti-AI Logo" class="brand-logo-svg">
+                </a>
+                <p style="color: #8f8ba3; font-size: 0.9rem; line-height: 1.6;">
+                    "Try Virtually. Shop Confidently." — Commercial model designed for student entrepreneurship and retail innovation.
+                </p>
+            </div>
+            <div class="footer-column">
+                <h3>Navigation</h3>
+                <a href="index.html">Home</a>
+                <a href="tryon.html">Virtual Studio</a>
+                <a href="shop.html">Dress Catalog</a>
+                <a href="technology.html">Technology Transparency</a>
+            </div>
+            <div class="footer-column">
+                <h3>Economics</h3>
+                <a href="#unit-economics">Interactive Calculator</a>
+                <a href="contact.html">Retailer Partnership</a>
+                <a href="about.html">About Team</a>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>© 2026 Vesti-AI. All Rights Reserved.</p>
+            <p>Vesti-AI Business Model & Unit Economics</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script type="module" src="js/auth-guard.js"></script>
+    <script type="module" src="js/business-calculator.js"></script>
+</body>
+</html>

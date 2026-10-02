@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View your VestiAI profile, session details, and fitting preferences.">
+    <title>My Profile | VestiAI</title>
+
+    <!-- Global Luxury CSS -->
+    <link rel="stylesheet" href="css/global.css">
+</head>
+
+<body class="auth-guard-pending">
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="home.html" class="logo">
+                Vesti<span>AI</span> <span class="sparkle">✨</span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="home.html">Home</a>
+                <a href="home.html#categories">Categories</a>
+                <a href="home.html#products">Collection</a>
+                <a href="tryon.html">Virtual Try-On</a>
+                <a href="orders.html">Orders</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="cart.html" class="nav-cart-btn" aria-label="Shopping Cart">
+                    🛒
+                </a>
+                <a href="login.html" class="login-btn">Login</a>
+                <a href="register.html" class="signup-btn">Sign Up</a>
+            </div>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+        </div>
+    </header>
+
+    <!-- ================= PROFILE PAGE ================= -->
+    <main class="auth-container" style="padding: 60px 20px;">
+        <div class="auth-card" style="max-width: 620px;">
+            <div class="auth-icon">
+                👤
+            </div>
+
+            <div class="auth-heading">
+                <span>ACCOUNT DASHBOARD</span>
+                <h1 class="font-heading">My Profile</h1>
+                <p>Manage your account, order history, and virtual fitting looks.</p>
+            </div>
+
+            <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; margin-bottom: 24px;">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+                    <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--primary-gradient); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white;">
+                        ✨
+                    </div>
+                    <div>
+                        <h3 id="profileUserEmail" style="font-size: 1.15rem; color: var(--dark); margin-bottom: 4px;">Loading user...</h3>
+                        <span style="font-size: 0.85rem; color: var(--success); font-weight: 600;">● Active Firebase Session</span>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px;">
+                    <a href="orders.html" class="secondary-btn" style="text-align: center; justify-content: center;">
+                        📦 My Orders
+                    </a>
+                    <a href="wishlist.html" class="secondary-btn" style="text-align: center; justify-content: center;">
+                        💖 My Wishlist
+                    </a>
+                    <a href="cart.html" class="secondary-btn" style="text-align: center; justify-content: center;">
+                        🛍️ Shopping Bag
+                    </a>
+                    <a href="tryon.html" class="primary-btn" style="text-align: center; justify-content: center;">
+                        ✨ Virtual Try-On
+                    </a>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <button type="button" id="profileLogoutBtn" class="logout-btn" style="padding: 12px 28px; font-size: 0.95rem;">
+                    Sign Out of VestiAI 🚪
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container footer-bottom">
+            <p>© 2026 VestiAI. All Rights Reserved.</p>
+            <p>Next-Gen AI Virtual Dressing Room</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script type="module" src="js/auth-guard.js"></script>
+    <script type="module">
+        import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
+        import { auth } from "./firebase/firebase-config.js";
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                const emailEl = document.getElementById("profileUserEmail");
+                if (emailEl) emailEl.textContent = user.email;
+            }
+        });
+
+        const profileLogoutBtn = document.getElementById("profileLogoutBtn");
+        if (profileLogoutBtn) {
+            profileLogoutBtn.addEventListener("click", async () => {
+                await signOut(auth);
+                window.location.replace("login.html");
+            });
+        }
+    </script>
+</body>
+</html>

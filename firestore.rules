@@ -1,0 +1,71 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions for authentication & role verification
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isAdmin() {
+      return isAuthenticated() && (
+        request.auth.token.admin == true ||
+        request.auth.token.email.matches('.*@vesti-ai[.]com$') ||
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+      );
+    }
+
+    // Products Collection (Dress Catalog)
+    // - Public read access for customers and virtual try-on studio
+    // - Write / edit / delete restricted to verified administrators
+    match /products/{productId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    // User Profiles
+    // - Users can read and write only their own profile document
+    // - Admins can read all profiles for support purposes
+    match /users/{userId} {
+      allow read, write: if isOwner(userId);
+      allow read: if isAdmin();
+    }
+
+    // Shopping Carts (Subcollections per user)
+    // - Strictly private to the authenticated owner
+    match /carts/{userId}/items/{itemId} {
+      allow read, write: if isOwner(userId);
+    }
+
+    // Wishlists (Subcollections per user)
+    // - Private to the authenticated user
+    match /wishlists/{userId}/items/{itemId} {
+      allow read, write: if isOwner(userId);
+    }
+
+    // Orders Collection
+    // - Authenticated customers can create and read orders
+    // - Administrators can view and update order status (e.g. Dispatched, Delivered)
+    match /orders/{orderId} {
+      allow read, create: if isAuthenticated();
+      allow update, delete: if isAdmin();
+    }
+
+    // Inquiries Collection (Contact Form)
+    // - Anyone can submit an inquiry; only admins can read / manage inquiries
+    match /inquiries/{inquiryId} {
+      allow create: if true;
+      allow read, update, delete: if isAdmin();
+    }
+
+    // Boutique Retailer Subscriptions (B2B SaaS)
+    match /retailers/{retailerId} {
+      allow read: if isAuthenticated() && (request.auth.uid == retailerId || isAdmin());
+      allow write: if isAdmin();
+    }
+  }
+}

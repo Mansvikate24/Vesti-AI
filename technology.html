@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inside the Technology Behind Vesti-AI — Complete architectural transparency covering computer vision, Firebase, QR systems, and implementation statuses.">
+    <title>Technology Transparency & Architecture | Vesti-AI</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/logo/vesti-ai-icon.svg">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/global.css">
+</head>
+
+<body>
+
+    <!-- ================= ANNOUNCEMENT BAR ================= -->
+    <div class="announcement-bar">
+        <span class="badge">Open Architecture</span>
+        <span>Transparent disclosure of what is implemented, what is simulated, and what is planned.</span>
+    </div>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo-wrap" aria-label="Vesti-AI Home">
+                <img src="assets/logo/vesti-ai-logo.svg" alt="Vesti-AI Logo" class="brand-logo-svg">
+            </a>
+
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="tryon.html">Virtual Try-On</a>
+                <a href="shop.html">Shop Dresses</a>
+                <a href="scanner.html">Scan QR</a>
+                <a href="business.html">Business Model</a>
+                <a href="technology.html" class="active">Technology</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="cart.html" class="nav-cart-btn" aria-label="Shopping Cart">
+                    🛍️
+                </a>
+                <a href="login.html" class="login-btn">Login</a>
+                <a href="register.html" class="signup-btn">Get Started</a>
+            </div>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">☰</button>
+        </div>
+    </header>
+
+    <main style="padding: 50px 0 80px;">
+        <div class="container">
+
+            <!-- Title & Context Badge -->
+            <div style="text-align: center; max-width: 820px; margin: 0 auto 50px;">
+                <span class="section-badge">FULL ARCHITECTURAL DISCLOSURE</span>
+                <h1 class="font-heading" style="font-size: clamp(2.2rem, 3.5vw, 3.2rem); color: #111018; margin: 12px 0;">
+                    Inside the Technology Behind Vesti-AI
+                </h1>
+                <p style="color: #5e5b72; font-size: 1.15rem; line-height: 1.6;">
+                    Understand how our virtual dressing room works, what powers it, and what is still under development.
+                </p>
+            </div>
+
+            <!-- ================= SECTION 1: 6-LAYER SYSTEM ARCHITECTURE ================= -->
+            <section style="margin-bottom: 60px;">
+                <h2 class="font-heading" style="font-size: 1.8rem; color: #111018; margin-bottom: 8px;">
+                    Six-Layer Fashion-Tech Architecture
+                </h2>
+                <p style="color: #5e5b72; font-size: 1rem; margin-bottom: 28px;">
+                    Our stack decouples the client-side computer vision engine from backend cloud databases for low latency and privacy-friendly in-browser inferencing.
+                </p>
+
+                <div class="tech-layers-container">
+                    <!-- Layer 1 -->
+                    <div class="tech-layer-card">
+                        <div class="tech-layer-title">
+                            <span>🖥️</span> Layer 1: User Interface
+                        </div>
+                        <div>
+                            <p style="color: #5e5b72; font-size: 0.92rem; line-height: 1.6; margin-bottom: 8px;">
+                                <strong>HTML5:</strong> Provides semantic structuring for all pages (landing, try-on studio, catalog, checkout, admin portal).<br>
+                                <strong>CSS3:</strong> Drives custom glassmorphic styling, responsive multi-column layouts, smooth animations, and cohesive HSL color tokens.<br>
+                                <strong>JavaScript (ES6+):</strong> Handles reactive DOM updates, try-on stage coordination, cart state persistence, and Firebase event subscriptions without heavy frontend framework overhead.
+                            </p>
+                            <span class="status-badge tested">Implemented and Tested</span>
+                        </div>
+                    </div>
+
+                    <!-- Layer 2 -->
+                    <div class="tech-layer-card">
+                        <div class="tech-layer-title">
+                            <span>🔐</span> Layer 2: Auth & Database
+                        </div>
+                        <div>
+                            <p style="color: #5e5b72; font-size: 0.92rem; line-height: 1.6; margin-bottom: 8px;">
+                                <strong>Firebase Authentication:</strong> Secure email/password account creation, session tokens, and route protection.<br>
+                                <strong>Cloud Firestore:</strong> Stores structured product records, user profiles, wishlist arrays, and order history.<br>
+                                <strong>Firebase Storage:</strong> Houses approved high-resolution dress photos and transparent PNG overlay assets.<br>
+                                <strong>Firestore Security Rules:</strong> Enforce role-based access control to protect administrative operations from unauthorized client writes.
+                            </p>
+                            <span class="status-badge tested">Implemented and Tested</span>
+                        </div>
+                    </div>
+
+                    <!-- Layer 3 -->
+                    <div class="tech-layer-card">
+                        <div class="tech-layer-title">
+                            <span>📷</span> Layer 3: Camera & AI
+                        </div>
+                        <div>
+                            <p style="color: #5e5b72; font-size: 0.92rem; line-height: 1.6; margin-bottom: 8px;">
+                                <strong>Browser Camera API:</strong> Queries <code>navigator.mediaDevices.getUserMedia()</code> after user consent.<br>
+                                <strong>MediaPipe Pose Landmarker:</strong> Detects 33 body landmarks (shoulders, elbows, hips, knees) in real-time.<br>
+                                <strong>HTML5 Canvas API:</strong> Dynamically calculates garment position, shoulder width, scale, and affine orientation to draw overlays.<br>
+                                <strong>TensorFlow.js / WebGL:</strong> Supported runtime environment for client-side ML tensor ops; WebGL/Three.js reserved for future 3D meshes.
+                            </p>
+                            <span class="status-badge tested">Implemented and Tested</span>
+                        </div>
+                    </div>
+
+                    <!-- Layer 4 -->
+                    <div class="tech-layer-card">
+                        <div class="tech-layer-title">
+                            <span>📱</span> Layer 4: QR Code System
+                        </div>
+                        <div>
+                            <p style="color: #5e5b72; font-size: 0.92rem; line-height: 1.6; margin-bottom: 8px;">
+                                <strong>Product Identification:</strong> Physical hangtags embed unique product IDs.<br>
+                                <strong>In-Browser QR Decoding:</strong> JavaScript scanner reads QR codes through the camera, extracts the garment ID, validates the record against Firestore, and redirects immediately to the interactive try-on room.
+                            </p>
+                            <span class="status-badge tested">Implemented and Tested</span>
+                        </div>
+                    </div>
+
+                    <!-- Layer 5 -->
+                    <div class="tech-layer-card">
+                        <div class="tech-layer-title">
+                            <span>🛍️</span> Layer 5: E-Commerce Funnel
+                        </div>
+                        <div>
+                            <p style="color: #5e5b72; font-size: 0.92rem; line-height: 1.6; margin-bottom: 8px;">
+                                <strong>Catalog & Inventory:</strong> Real-time dress search, category filtering, stock availability flags.<br>
+                                <strong>Cart & Wishlist:</strong> Local and Firestore synchronized shopping bag with quantity incrementation and price validation.<br>
+                                <strong>Checkout & Orders:</strong> Delivery address collection, Cash on Delivery support, and a transparent simulated UPI flow.
+                            </p>
+                            <span class="status-badge tested">Implemented and Tested</span>
+                        </div>
+                    </div>
+
+                    <!-- Layer 6 -->
+                    <div class="tech-layer-card">
+                        <div class="tech-layer-title">
+                            <span>🛡️</span> Layer 6: Deployment & Security
+                        </div>
+                        <div>
+                            <p style="color: #5e5b72; font-size: 0.92rem; line-height: 1.6; margin-bottom: 8px;">
+                                <strong>HTTPS Protocol:</strong> Strictly required by modern browsers to authorize camera access.<br>
+                                <strong>Firebase Hosting / Static CDNs:</strong> Global CDN edge caching with instant SSL certification.<br>
+                                <strong>Secret Sanitization:</strong> Frontend scripts contain only public Firebase client identifiers; no server credentials, administrative tokens, or private payment secrets are bundled in public client bundles.
+                            </p>
+                            <span class="status-badge tested">Implemented and Tested</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= CRITICAL AI DISTINCTION: 2D LANDMARKS VS 3D CLOTH SIMULATION ================= -->
+            <section style="margin-bottom: 60px;">
+                <div style="background: #ffffff; border: 1px solid #EAE8F2; border-radius: var(--radius-xl); padding: 36px 40px;">
+                    <span class="section-badge">CRITICAL ENGINEERING CLARITY</span>
+                    <h2 class="font-heading" style="font-size: 1.8rem; color: #111018; margin: 8px 0 12px;">
+                        Pose Landmark Alignment vs. 3D Cloth Simulation
+                    </h2>
+                    <p style="color: #5e5b72; font-size: 1rem; line-height: 1.6; margin-bottom: 24px;">
+                        A major pitfall in fashion tech marketing is exaggerating visual overlays as "exact fit tailor replicas". Here is our honest technical comparison:
+                    </p>
+
+                    <div class="compare-box">
+                        <!-- What Vesti-AI Currently Implements -->
+                        <div class="compare-card current">
+                            <h3 style="color: #7657FF; font-size: 1.15rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                                <span>✅</span> What Vesti-AI Currently Implements
+                            </h3>
+                            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.9rem; color: #4a4563;">
+                                <li>• <strong>2D Torso Landmark Tracking:</strong> Uses left/right shoulders (indices 11, 12) and hips (indices 23, 24) to estimate body width and vertical torso span.</li>
+                                <li>• <strong>Perspective Affine Scaling:</strong> Garment dimensions scale proportionally with distance from the camera.</li>
+                                <li>• <strong>Manual Tailor Fit Adjustments:</strong> Sliders allow the user to fine-tune garment scale (0.75x–2.4x), vertical offset (-100px to +100px), and opacity.</li>
+                                <li>• <strong>Zero Latency Client-Side Privacy:</strong> Video frames stay on device, eliminating expensive cloud server GPU pipelines.</li>
+                            </ul>
+                        </div>
+
+                        <!-- What Production 3D Simulation Requires (Future Research) -->
+                        <div class="compare-card future">
+                            <h3 style="color: #475569; font-size: 1.15rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                                <span>🔬</span> Requirements for True 3D Cloth Physics
+                            </h3>
+                            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.9rem; color: #475569;">
+                                <li>• <strong>Dense Volumetric Mesh:</strong> Reconstructing the user's 3D body mesh (SMPL / SMPL-X models) rather than 2D points.</li>
+                                <li>• <strong>Finite Element Cloth Deformation:</strong> Simulating physical fabric properties (silk drape vs. stiff denim tension) in real-time.</li>
+                                <li>• <strong>Self-Occlusion & Depth Estimation:</strong> Hiding garment parts when arms cross in front or when the user turns sideways.</li>
+                                <li>• <strong>Diffusion-Based Virtual Try-On:</strong> Neural GAN or diffusion inpainting (e.g. TryOnDiffusion), which requires cloud GPU clusters with 3–10s latency per frame.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= SECTION 2: TECHNOLOGY STATUS TABLE ================= -->
+            <section style="margin-bottom: 60px;">
+                <div style="background: #ffffff; border: 1px solid #EAE8F2; border-radius: var(--radius-xl); padding: 36px 40px;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; margin-bottom: 18px;">
+                        <div>
+                            <span class="section-badge">SYSTEM AUDIT</span>
+                            <h2 class="font-heading" style="font-size: 1.8rem; color: #111018; margin: 4px 0 0;">
+                                Technology Implementation Status Table
+                            </h2>
+                        </div>
+                        <span style="font-size: 0.85rem; color: #8f8ba3;">Last Verified: October 2026</span>
+                    </div>
+
+                    <p style="color: #5e5b72; font-size: 0.95rem; margin-bottom: 24px;">
+                        Each component in the Vesti-AI ecosystem is tagged with its verified integration state:
+                    </p>
+
+                    <div class="table-responsive">
+                        <table class="tech-status-table">
+                            <thead>
+                                <tr>
+                                    <th>Technology</th>
+                                    <th>Purpose</th>
+                                    <th>Implementation Status</th>
+                                    <th>Current Limitations</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>HTML5 / CSS3 / ES6+</strong></td>
+                                    <td>Frontend UI & responsive interaction</td>
+                                    <td><span class="status-badge tested">Implemented & Tested</span></td>
+                                    <td>Requires modern browser with CSS Grid & ES module support.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>MediaPipe Pose</strong></td>
+                                    <td>Torso landmark tracking</td>
+                                    <td><span class="status-badge tested">Implemented & Tested</span></td>
+                                    <td>Tracking requires adequate room lighting and full torso visibility.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>HTML5 Canvas API</strong></td>
+                                    <td>Transparent dress overlay rendering</td>
+                                    <td><span class="status-badge tested">Implemented & Tested</span></td>
+                                    <td>2D planar overlay; does not fold or drape around body contours.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Firebase Auth</strong></td>
+                                    <td>User registration, login, session</td>
+                                    <td><span class="status-badge tested">Implemented & Tested</span></td>
+                                    <td>Includes fallback guest session when offline or offline-testing.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Cloud Firestore</strong></td>
+                                    <td>Product records, cart, wishlists</td>
+                                    <td><span class="status-badge tested">Implemented & Tested</span></td>
+                                    <td>Requires internet connectivity; fallback mock catalog provided.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>QR Code Scanner</strong></td>
+                                    <td>Boutique garment tag decoding</td>
+                                    <td><span class="status-badge tested">Implemented & Tested</span></td>
+                                    <td>Camera focus depends on user device lens quality.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Cash on Delivery (COD)</strong></td>
+                                    <td>Order placement simulation</td>
+                                    <td><span class="status-badge tested">Implemented & Tested</span></td>
+                                    <td>Simulated e-commerce checkout workflow for demonstration.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Simulated UPI Flow</strong></td>
+                                    <td>Interactive UPI QR payment demo</td>
+                                    <td><span class="status-badge tested">Implemented & Tested</span></td>
+                                    <td>Clearly labeled simulated transaction; does not execute real bank transfers.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Production Razorpay / Stripe</strong></td>
+                                    <td>Live banking payment processing</td>
+                                    <td><span class="status-badge planned">Planned for Future</span></td>
+                                    <td>Requires commercial business entity, GSTIN, and merchant verification.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>3D Cloth Physics / WebGL Mesh</strong></td>
+                                    <td>Real-time fabric deformation</td>
+                                    <td><span class="status-badge planned">Planned for Future</span></td>
+                                    <td>Requires extensive 3D model rigging and higher GPU compute budgets.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= SECTION 3: DEMONSTRATION VERIFICATION CHECKLIST ================= -->
+            <section style="margin-bottom: 40px;">
+                <div style="background: #ffffff; border: 1px solid #EAE8F2; border-radius: var(--radius-xl); padding: 36px 40px;">
+                    <span class="section-badge">EVALUATION GUIDE</span>
+                    <h2 class="font-heading" style="font-size: 1.8rem; color: #111018; margin: 8px 0 12px;">
+                        Interactive Demonstration Verification Checklist
+                    </h2>
+                    <p style="color: #5e5b72; font-size: 0.95rem; margin-bottom: 24px;">
+                        Use this checklist during academic reviews, investor demos, or self-testing to verify core capabilities:
+                    </p>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;" id="verificationChecklist">
+                        <label class="checkbox-label" style="background: #FAF9FF; padding: 14px 18px; border: 1px solid #EAE8F2; border-radius: var(--radius-md); display: flex; align-items: center; gap: 12px; cursor: pointer;">
+                            <input type="checkbox" checked disabled>
+                            <span>1. Responsive navigation on desktop & mobile screens</span>
+                        </label>
+                        <label class="checkbox-label" style="background: #FAF9FF; padding: 14px 18px; border: 1px solid #EAE8F2; border-radius: var(--radius-md); display: flex; align-items: center; gap: 12px; cursor: pointer;">
+                            <input type="checkbox" checked disabled>
+                            <span>2. Camera permission request & prompt handling</span>
+                        </label>
+                        <label class="checkbox-label" style="background: #FAF9FF; padding: 14px 18px; border: 1px solid #EAE8F2; border-radius: var(--radius-md); display: flex; align-items: center; gap: 12px; cursor: pointer;">
+                            <input type="checkbox" checked disabled>
+                            <span>3. Real-time shoulder and hip landmark tracking</span>
+                        </label>
+                        <label class="checkbox-label" style="background: #FAF9FF; padding: 14px 18px; border: 1px solid #EAE8F2; border-radius: var(--radius-md); display: flex; align-items: center; gap: 12px; cursor: pointer;">
+                            <input type="checkbox" checked disabled>
+                            <span>4. Manual Tailor Fit sliders (scale, vertical offset, opacity)</span>
+                        </label>
+                        <label class="checkbox-label" style="background: #FAF9FF; padding: 14px 18px; border: 1px solid #EAE8F2; border-radius: var(--radius-md); display: flex; align-items: center; gap: 12px; cursor: pointer;">
+                            <input type="checkbox" checked disabled>
+                            <span>5. Fallback Demo Model & Photo Upload capabilities</span>
+                        </label>
+                        <label class="checkbox-label" style="background: #FAF9FF; padding: 14px 18px; border: 1px solid #EAE8F2; border-radius: var(--radius-md); display: flex; align-items: center; gap: 12px; cursor: pointer;">
+                            <input type="checkbox" checked disabled>
+                            <span>6. Dresses-only catalog filtering & search</span>
+                        </label>
+                        <label class="checkbox-label" style="background: #FAF9FF; padding: 14px 18px; border: 1px solid #EAE8F2; border-radius: var(--radius-md); display: flex; align-items: center; gap: 12px; cursor: pointer;">
+                            <input type="checkbox" checked disabled>
+                            <span>7. QR Code scan linking to specific dress ID</span>
+                        </label>
+                        <label class="checkbox-label" style="background: #FAF9FF; padding: 14px 18px; border: 1px solid #EAE8F2; border-radius: var(--radius-md); display: flex; align-items: center; gap: 12px; cursor: pointer;">
+                            <input type="checkbox" checked disabled>
+                            <span>8. Shopping cart totals & simulated checkout</span>
+                        </label>
+                        <label class="checkbox-label" style="background: #FAF9FF; padding: 14px 18px; border: 1px solid #EAE8F2; border-radius: var(--radius-md); display: flex; align-items: center; gap: 12px; cursor: pointer;">
+                            <input type="checkbox" checked disabled>
+                            <span>9. Business unit economics reactive calculator</span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="brand-logo-wrap" style="margin-bottom: 14px;">
+                    <img src="assets/logo/vesti-ai-logo.svg" alt="Vesti-AI Logo" class="brand-logo-svg">
+                </a>
+                <p style="color: #8f8ba3; font-size: 0.9rem; line-height: 1.6;">
+                    Vesti-AI Technology Transparency Architecture. Bridging artificial intelligence with digital retail integrity.
+                </p>
+            </div>
+            <div class="footer-column">
+                <h3>Navigation</h3>
+                <a href="index.html">Home</a>
+                <a href="tryon.html">Virtual Studio</a>
+                <a href="shop.html">Dress Catalog</a>
+                <a href="business.html">Business Model</a>
+            </div>
+            <div class="footer-column">
+                <h3>Developer</h3>
+                <a href="admin.html">Admin Portal</a>
+                <a href="scanner.html">QR Tag Scanner</a>
+                <a href="about.html">About Team</a>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>© 2026 Vesti-AI. All Rights Reserved.</p>
+            <p>Transparency & Architectural Documentation</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script type="module" src="js/auth-guard.js"></script>
+</body>
+</html>

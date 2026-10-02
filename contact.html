@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Vesti-AI — Startup inquiries, boutique retail partnerships, and technical feedback for our AI virtual try-on dressing room prototype.">
+    <title>Contact & Partnerships | Vesti-AI</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/logo/vesti-ai-icon.svg">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/global.css">
+</head>
+
+<body>
+
+    <!-- ================= ANNOUNCEMENT BAR ================= -->
+    <div class="announcement-bar">
+        <span class="badge">Feedback Welcome</span>
+        <span>Open for boutique pilot collaborations and technical academic evaluations.</span>
+    </div>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo-wrap" aria-label="Vesti-AI Home">
+                <img src="assets/logo/vesti-ai-logo.svg" alt="Vesti-AI Logo" class="brand-logo-svg">
+            </a>
+
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="tryon.html">Virtual Try-On</a>
+                <a href="shop.html">Shop Dresses</a>
+                <a href="business.html">Business Model</a>
+                <a href="technology.html">Technology</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="cart.html" class="nav-cart-btn" aria-label="Shopping Cart">🛍️</a>
+                <a href="login.html" class="login-btn">Login</a>
+                <a href="register.html" class="signup-btn">Get Started</a>
+            </div>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">☰</button>
+        </div>
+    </header>
+
+    <main style="padding: 50px 0 80px;">
+        <div class="container">
+
+            <!-- Title & Context Badge -->
+            <div style="text-align: center; max-width: 760px; margin: 0 auto 50px;">
+                <span class="section-badge">COMMUNICATION & COLLABORATION</span>
+                <h1 class="font-heading" style="font-size: clamp(2.2rem, 3.5vw, 3.2rem); color: #111018; margin: 12px 0;">
+                    Contact & Partnership Inquiries
+                </h1>
+                <p style="color: #5e5b72; font-size: 1.15rem; line-height: 1.6;">
+                    Whether you are an independent boutique owner curious about our pilot program, an entrepreneur, or a reviewer sharing feedback, we'd love to hear from you.
+                </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 40px; align-items: flex-start;" class="hero-grid-responsive">
+                
+                <!-- Contact Form Card -->
+                <div style="background: #ffffff; border: 1px solid #EAE8F2; border-radius: var(--radius-xl); padding: 36px 40px; box-shadow: 0 8px 30px rgba(17,16,24,0.03);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h2 class="font-heading" style="font-size: 1.6rem; color: #111018;">Send an Inquiry</h2>
+                        <span class="status-badge tested" style="font-size: 0.75rem;">Demonstration Form</span>
+                    </div>
+
+                    <form id="contactForm" class="auth-form" onsubmit="handleContactSubmit(event)">
+                        
+                        <div class="form-group">
+                            <label for="contactName">Your Full Name</label>
+                            <input type="text" id="contactName" placeholder="e.g. Priya Sharma" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactEmail">Email Address</label>
+                            <input type="email" id="contactEmail" placeholder="e.g. priya@boutique.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactInquiryType">Inquiry Type</label>
+                            <select id="contactInquiryType" style="width: 100%; padding: 12px 14px; border: 1px solid #EAE8F2; border-radius: var(--radius-sm); font-family: var(--font-main); font-size: 0.95rem; background: #FAF9FF; outline: none;" required>
+                                <option value="retailer">Retailer & Boutique Partnership Inquiry</option>
+                                <option value="collaboration">Startup & Entrepreneurship Collaboration</option>
+                                <option value="technical">Technical & Computer Vision Feedback</option>
+                                <option value="other">General Question</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactMessage">Your Message / Partnership Proposal</label>
+                            <textarea id="contactMessage" rows="5" placeholder="Share details about your boutique, store catalog size, or specific questions about our try-on technology..." style="width: 100%; padding: 12px 14px; border: 1px solid #EAE8F2; border-radius: var(--radius-sm); font-family: var(--font-main); font-size: 0.95rem; outline: none;" required></textarea>
+                        </div>
+
+                        <div id="contactFormStatus" style="display: none; padding: 14px 18px; border-radius: var(--radius-md); font-size: 0.9rem; margin-bottom: 16px; line-height: 1.5;"></div>
+
+                        <button type="submit" id="contactSubmitBtn" class="primary-btn" style="width: 100%; padding: 14px; font-size: 1.05rem;">
+                            Submit Demonstration Inquiry ✨
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Info Column -->
+                <div>
+                    <div style="background: linear-gradient(145deg, #111018 0%, #1a162b 100%); border: 1px solid rgba(185, 167, 255, 0.25); border-radius: var(--radius-xl); padding: 36px; color: #FAF9FF; margin-bottom: 24px;">
+                        <h3 class="font-heading" style="font-size: 1.5rem; color: #FAF9FF; margin-bottom: 14px;">
+                            Boutique Pilot Program
+                        </h3>
+                        <p style="color: #c4c1d6; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+                            We are currently looking for independent dress boutiques to participate in Phase 2 closed prototype pilots. 
+                        </p>
+                        <div style="background: rgba(255,255,255,0.06); border-radius: var(--radius-md); padding: 18px; font-size: 0.88rem; line-height: 1.5; color: #FAF9FF;">
+                            <strong>Pilot Benefits:</strong>
+                            <ul style="margin: 8px 0 0 18px; padding: 0; color: #B9A7FF;">
+                                <li>Custom QR hangtag generation for your dress catalog</li>
+                                <li>Direct access to our Tailor Fit computer vision studio</li>
+                                <li>Zero software licensing fees during the evaluation period</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Direct Contact Placeholders -->
+                    <div style="background: #ffffff; border: 1px solid #EAE8F2; border-radius: var(--radius-xl); padding: 28px;">
+                        <h4 style="font-size: 1.1rem; color: #111018; margin-bottom: 14px;">Direct Channels (Placeholders):</h4>
+                        <div style="display: flex; flex-direction: column; gap: 12px; font-size: 0.92rem; color: #5e5b72;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <span style="font-size: 1.2rem;">📧</span>
+                                <span>Project Inquiries: <strong>contact@vesti-ai.prototype</strong></span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <span style="font-size: 1.2rem;">💻</span>
+                                <span>Codebase: <strong>GitHub Academic Repository</strong></span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <span style="font-size: 1.2rem;">📍</span>
+                                <span>Location: <strong>Fashion Tech Incubator Lab</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="brand-logo-wrap" style="margin-bottom: 14px;">
+                    <img src="assets/logo/vesti-ai-logo.svg" alt="Vesti-AI Logo" class="brand-logo-svg">
+                </a>
+                <p style="color: #8f8ba3; font-size: 0.9rem; line-height: 1.6;">
+                    "Try Virtually. Shop Confidently." — Startup concept and demonstration platform.
+                </p>
+            </div>
+            <div class="footer-column">
+                <h3>Navigation</h3>
+                <a href="index.html">Home</a>
+                <a href="tryon.html">Virtual Studio</a>
+                <a href="shop.html">Dress Catalog</a>
+                <a href="business.html">Business Model</a>
+            </div>
+            <div class="footer-column">
+                <h3>Startup</h3>
+                <a href="about.html">About Team</a>
+                <a href="technology.html">Technology Transparency</a>
+                <a href="admin.html">Admin Portal</a>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>© 2026 Vesti-AI. All Rights Reserved.</p>
+            <p>Startup Demonstration Feedback Portal</p>
+        </div>
+    </footer>
+
+    <!-- Form Handler with Honest Demonstration Transparency -->
+    <script>
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const btn = document.getElementById("contactSubmitBtn");
+            const status = document.getElementById("contactFormStatus");
+            const name = document.getElementById("contactName").value.trim();
+            const email = document.getElementById("contactEmail").value.trim();
+            const type = document.getElementById("contactInquiryType").value;
+
+            btn.disabled = true;
+            btn.textContent = "Recording Demonstration Inquiry...";
+
+            setTimeout(() => {
+                btn.disabled = false;
+                btn.textContent = "Submit Another Inquiry";
+                status.style.display = "block";
+                status.style.background = "rgba(16, 185, 129, 0.08)";
+                status.style.border = "1px solid #10b981";
+                status.style.color = "#065f46";
+                status.innerHTML = `
+                    <strong>Demonstration Notice:</strong> Thank you, <strong>${name}</strong>! Your inquiry regarding <em>${type}</em> has been captured in local prototype storage. As this is an entrepreneurship demonstration without a configured third-party email gateway (such as SendGrid or AWS SES), no live outbound email was dispatched. For live inquiries, please connect directly via our repository.
+                `;
+            }, 700);
+        }
+    </script>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script type="module" src="js/auth-guard.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | VestiAI</title>
+
+    <!-- Global Luxury CSS -->
+    <link rel="stylesheet" href="css/global.css">
+    <style>
+        .admin-nav {
+            background: #0f172a;
+            color: white;
+            padding: 18px 0;
+        }
+        .admin-nav .logo {
+            color: white;
+        }
+        .admin-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 36px;
+            align-items: start;
+            margin-top: 30px;
+        }
+        .product-list-container {
+            max-height: 600px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .admin-product-card {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            padding: 14px;
+            border-radius: var(--radius-md);
+            background: #f8fafc;
+            border: 1px solid var(--card-border);
+        }
+        .admin-product-img {
+            width: 70px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: var(--radius-sm);
+        }
+    </style>
+</head>
+
+<body class="auth-guard-pending">
+
+    <!-- Admin Header -->
+    <header class="admin-nav">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="home.html" class="logo">
+                Vesti<span>AI</span> <span style="font-size: 0.9rem; font-weight: 500; color: #94a3b8; margin-left: 8px;">ADMIN DASHBOARD</span>
+            </a>
+            <div style="display: flex; gap: 16px;">
+                <a href="home.html" class="secondary-btn" style="padding: 8px 16px; font-size: 0.85rem;">
+                    View Storefront →
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" style="padding: 40px 24px;">
+
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div>
+                <span class="section-badge">INVENTORY MANAGEMENT</span>
+                <h1 class="font-heading">Fashion Catalog Manager</h1>
+            </div>
+            <button type="button" id="seedCatalogBtn" class="secondary-btn" style="border-color: var(--primary); color: var(--primary);">
+                🌱 Seed Demo Products to Firebase
+            </button>
+        </div>
+
+        <div class="admin-grid">
+
+            <!-- ADD PRODUCT FORM -->
+            <section class="summary-card" style="padding: 36px;">
+                <h2 class="font-heading" style="margin-bottom: 20px;">Add New Product</h2>
+
+                <form id="productForm" class="auth-form">
+
+                    <div class="form-group">
+                        <label for="productName">Product Title</label>
+                        <input type="text" id="productName" placeholder="e.g. Royal Silk Evening Dress" required>
+                    </div>
+
+                    <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                        <div class="form-group">
+                            <label for="productCategory">Category</label>
+                            <select id="productCategory" required>
+                                <option value="Evening Gowns">Evening Gowns</option>
+                                <option value="Floral Dresses">Floral Dresses</option>
+                                <option value="Party Dresses">Party Dresses</option>
+                                <option value="Summer Dresses">Summer Dresses</option>
+                                <option value="Dresses">Dresses (General)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="productPrice">Price (₹ INR)</label>
+                            <input type="number" id="productPrice" placeholder="2499" min="1" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                        <div class="form-group">
+                            <label for="productSize">Available Sizes</label>
+                            <input type="text" id="productSize" placeholder="XS, S, M, L, XL" value="S, M, L, XL" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productQR">QR Code Identifier</label>
+                            <input type="text" id="productQR" placeholder="VESTI-DRESS-01" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productDescription">Description</label>
+                        <textarea id="productDescription" rows="3" placeholder="Fabric, fit, and styling details..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productImage">Image URL or Path</label>
+                        <input type="text" id="productImage" placeholder="assets/product/reddress.png or https://..." required>
+                        <img id="imagePreview" src="" alt="Preview" style="max-height: 140px; border-radius: var(--radius-md); object-fit: cover; margin-top: 10px; display: none;">
+                    </div>
+
+                    <button type="submit" id="addProductButton" class="primary-btn" style="width: 100%; margin-top: 10px; padding: 14px;">
+                        Publish Product ✨
+                    </button>
+
+                    <p id="productMessage" class="field-error" style="text-align: center; margin-top: 10px;"></p>
+
+                </form>
+            </section>
+
+            <!-- PRODUCT INVENTORY LIST -->
+            <section class="summary-card" style="padding: 36px;">
+                <h2 class="font-heading" style="margin-bottom: 20px;">Active Products</h2>
+                <div id="productList" class="product-list-container">
+                    <p style="color: var(--text-muted);">Loading active catalog...</p>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script type="module" src="js/auth-guard.js"></script>
+    <script type="module" src="js/admin.js"></script>
+</body>
+</html>

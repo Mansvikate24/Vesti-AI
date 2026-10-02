@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create your VestiAI account and step into the AI virtual dressing room.">
+    <title>Create Account | VestiAI</title>
+
+    <!-- Global Luxury CSS -->
+    <link rel="stylesheet" href="css/global.css">
+</head>
+
+<body class="auth-page">
+
+    <!-- ================= HEADER ================= -->
+    <header class="auth-header">
+        <div class="container auth-nav">
+            <a href="home.html" class="logo">
+                Vesti<span>AI</span> <span class="sparkle">✨</span>
+            </a>
+
+            <a href="login.html" class="back-home">
+                Sign In →
+            </a>
+        </div>
+    </header>
+
+    <!-- ================= REGISTER ================= -->
+    <main class="auth-container">
+        <div class="auth-card register-card">
+            
+            <div class="auth-icon">
+                ✨
+            </div>
+
+            <div class="auth-heading">
+                <span>JOIN VESTIAI</span>
+                <h1 class="font-heading">Create Your Account</h1>
+                <p>Start your personalized virtual fashion journey today.</p>
+            </div>
+
+            <!-- Registration Form -->
+            <form id="registerForm" class="auth-form">
+
+                <!-- Saved Firestore Profile Quick Fill Banner -->
+                <div class="saved-account-card">
+                    <div class="saved-account-header">
+                        <div class="saved-account-avatar">👤</div>
+                        <div class="saved-account-info">
+                            <span class="saved-account-title">Firestore Profile Template</span>
+                            <span class="saved-account-name">mansvi6 (test123@gmail.com)</span>
+                            <span class="saved-account-sub">Phone: 9876543210</span>
+                        </div>
+                    </div>
+                    <button type="button" class="saved-action-btn primary" id="autofillRegisterBtn">
+                        ✨ Fill Form with mansvi6 Profile
+                    </button>
+                </div>
+
+                <!-- Full Name -->
+                <div class="form-group">
+                    <label for="registerName">Full Name</label>
+                    <input
+                        type="text"
+                        id="registerName"
+                        name="name"
+                        placeholder="mansvi6"
+                        autocomplete="name"
+                        required
+                    >
+                    <small class="field-error" id="registerNameError"></small>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="registerEmail">Email Address</label>
+                    <input
+                        type="email"
+                        id="registerEmail"
+                        name="email"
+                        placeholder="test123@gmail.com"
+                        autocomplete="email"
+                        required
+                    >
+                    <small class="field-error" id="registerEmailError"></small>
+                </div>
+
+                <!-- Phone -->
+                <div class="form-group">
+                    <label for="registerPhone">Phone Number</label>
+                    <input
+                        type="tel"
+                        id="registerPhone"
+                        name="phone"
+                        placeholder="9876543210"
+                        autocomplete="tel"
+                    >
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="registerPassword">Password (6+ characters)</label>
+                    <div class="password-wrapper">
+                        <input
+                            type="password"
+                            id="registerPassword"
+                            name="password"
+                            placeholder="Create a strong password"
+                            autocomplete="new-password"
+                            required
+                        >
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="registerPasswordToggle"
+                            aria-label="Toggle password visibility"
+                        >
+                            👁
+                        </button>
+                    </div>
+                    <small class="field-error" id="registerPasswordError"></small>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <div class="password-wrapper">
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            placeholder="Re-enter your password"
+                            autocomplete="new-password"
+                            required
+                        >
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="confirmPasswordToggle"
+                            aria-label="Toggle confirm password visibility"
+                        >
+                            👁
+                        </button>
+                    </div>
+                    <small class="field-error" id="confirmPasswordError"></small>
+                </div>
+
+                <!-- Terms -->
+                <div class="terms-row">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="terms" required>
+                        <span>I agree to the <a href="#">Terms of Service</a> & <a href="#">Privacy Policy</a></span>
+                    </label>
+                </div>
+
+                <!-- Register Button -->
+                <button type="submit" class="auth-submit" id="registerButton">
+                    Create Account
+                </button>
+
+                <!-- Feedback Message -->
+                <div class="auth-message" id="registerMessage"></div>
+
+            </form>
+
+            <!-- Login Link -->
+            <div class="auth-switch">
+                <p>
+                    Already have an account?
+                    <a href="login.html">Sign In</a>
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script type="module" src="js/auth.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Simulated UPI QR Scanner for Auto-Rickshaw Drivers. Learn how QR codes are scanned safely.">
+    <title>Scan & Pay | UPI Learning Simulator</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Primary Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="simulator-body scanner-page-body">
+
+    <!-- Top Mandatory Educational Safety Banner -->
+    <header class="top-demo-banner" role="banner">
+        <div class="banner-content">
+            <span class="pulse-dot">🔵</span>
+            <strong>DEMO MODE | NO REAL MONEY | EDUCATIONAL SIMULATOR</strong>
+        </div>
+    </header>
+
+    <!-- App Viewport Wrapper -->
+    <div class="app-viewport scanner-viewport">
+
+        <!-- Top App Bar with Back & Demo Badge -->
+        <header class="app-header scanner-header">
+            <a href="index.html" class="header-back-btn" id="btnBackHome" aria-label="Go Back">
+                <span class="back-arrow">←</span>
+            </a>
+            <div class="header-center">
+                <h1 class="brand-title">Scan & Pay</h1>
+                <span class="header-subtitle">क्यूआर कोड स्कॅन करा</span>
+            </div>
+            <div class="header-right">
+                <span class="badge-demo">DEMO MODE</span>
+            </div>
+        </header>
+
+        <!-- Main Scanner Area -->
+        <main class="main-content scanner-main" id="scannerMain">
+
+            <!-- Camera Viewfinder Container -->
+            <section class="camera-stage" id="cameraStage">
+                
+                <!-- Live Video Preview (Streamed when camera is enabled) -->
+                <video id="cameraVideo" autoplay playsinline muted class="camera-video"></video>
+
+                <!-- Simulated Camera Placeholder when camera is off/denied -->
+                <div class="camera-fallback" id="cameraFallback">
+                    <div class="fallback-icon">📷</div>
+                    <p class="fallback-title" id="fallbackTitle">Camera is in Demo Standby</p>
+                    <p class="fallback-sub" id="fallbackSub">Click <strong>Start Scanner</strong> to activate camera, or use <strong>Simulate QR Scan</strong> for instant practice.</p>
+                </div>
+
+                <!-- QR Targeting Frame -->
+                <div class="scanning-frame" id="scanningFrame">
+                    <div class="corner-border top-left"></div>
+                    <div class="corner-border top-right"></div>
+                    <div class="corner-border bottom-left"></div>
+                    <div class="corner-border bottom-right"></div>
+                    
+                    <!-- Vertical Laser Scanner Animation -->
+                    <div class="laser-scanner-line" id="laserLine"></div>
+
+                    <!-- Target Center Crosshair -->
+                    <div class="scanner-aim-marker">
+                        <span class="aim-hint">Align QR inside box</span>
+                    </div>
+                </div>
+
+                <!-- Top Camera Utility Controls (Torch & Camera Switch) -->
+                <div class="camera-overlay-controls">
+                    <button type="button" class="cam-ctrl-btn" id="btnToggleFlash" title="Toggle Flashlight">
+                        <span id="flashIcon">🔦</span> Flash
+                    </button>
+                    <button type="button" class="cam-ctrl-btn" id="btnSimulateScan" title="Simulate instant QR detection">
+                        ⚡ Quick Scan
+                    </button>
+                </div>
+
+                <!-- Camera Status Notification Chip -->
+                <div class="cam-status-chip" id="camStatusChip">
+                    <span class="status-indicator"></span>
+                    <span id="camStatusText">Ready for training</span>
+                </div>
+
+            </section>
+
+            <!-- Scanner Mode Switch Buttons -->
+            <section class="scanner-action-buttons">
+                <button type="button" class="btn btn-action-card active" id="btnStartCamera">
+                    <span class="btn-action-icon">📷</span>
+                    <span class="btn-action-label">Start Scanner</span>
+                    <span class="btn-action-sub">कॅमेरा सुरू करा</span>
+                </button>
+
+                <button type="button" class="btn btn-action-card" id="btnUploadQR">
+                    <span class="btn-action-icon">🖼️</span>
+                    <span class="btn-action-label">Upload QR</span>
+                    <span class="btn-action-sub">गॅलरीतून निवडा</span>
+                </button>
+
+                <button type="button" class="btn btn-action-card" id="btnEnterUpi">
+                    <span class="btn-action-icon">⌨️</span>
+                    <span class="btn-action-label">Enter UPI ID</span>
+                    <span class="btn-action-sub">आयडी नंबर टाका</span>
+                </button>
+            </section>
+
+            <!-- Hidden File Input for QR Image Upload -->
+            <input type="file" id="qrFileInput" accept="image/*" style="display: none;">
+
+            <!-- Educational Instructional Help Text -->
+            <section class="scanner-guidance-card">
+                <div class="guidance-icon">💡</div>
+                <div class="guidance-text">
+                    <strong>How to Scan:</strong>
+                    <p>Hold your phone steady 15–20 cm in front of the QR code until the green box beeps.</p>
+                </div>
+            </section>
+
+            <!-- Bottom Interactive Learning Bar: Demo QR, Try Sample QR, How to Scan -->
+            <section class="scanner-aux-row">
+                <button type="button" class="aux-pill-btn" id="btnShowDemoQR">
+                    <span class="pill-icon">🏁</span> Demo QR
+                </button>
+                <button type="button" class="aux-pill-btn" id="btnTrySampleQR">
+                    <span class="pill-icon">🎯</span> Try Sample QR
+                </button>
+                <button type="button" class="aux-pill-btn" id="btnHowToScan">
+                    <span class="pill-icon">❓</span> How to Scan?
+                </button>
+            </section>
+
+            <!-- Safety Reminder Note -->
+            <section class="mini-safety-banner">
+                <span class="safety-shield-mini">🛡️</span>
+                <span><strong>Safety:</strong> Never scan unknown QR codes sent on WhatsApp to receive money.</span>
+            </section>
+
+            <div class="nav-spacer"></div>
+
+        </main>
+
+        <!-- Bottom Navigation Bar -->
+        <nav class="bottom-nav" role="navigation" aria-label="Main Navigation">
+            <a href="index.html" class="nav-link" id="navHome">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-text">Home</span>
+            </a>
+            <a href="index.html#safetySection" class="nav-link" id="navLearn">
+                <span class="nav-icon">📚</span>
+                <span class="nav-text">Learn</span>
+            </a>
+            <a href="scanner.html" class="nav-link nav-fab-center active" id="navScanPay">
+                <div class="nav-fab-btn">
+                    <span class="nav-fab-icon">📷</span>
+                </div>
+                <span class="nav-text">Scan & Pay</span>
+            </a>
+            <a href="transactions.html" class="nav-link" id="navTxns">
+                <span class="nav-icon">📜</span>
+                <span class="nav-text">Transactions</span>
+            </a>
+            <a href="index.html#learningAssistantSection" class="nav-link" id="navHelp">
+                <span class="nav-icon">❓</span>
+                <span class="nav-text">Help</span>
+            </a>
+        </nav>
+
+    </div>
+
+    <!-- ================= MODALS & BOTTOM SHEETS ================= -->
+
+    <!-- 1. QR Code Detected Bottom Sheet (Section 2) -->
+    <div class="modal-backdrop" id="qrDetectedModal" role="dialog" aria-modal="true" aria-labelledby="detectedTitle">
+        <div class="bottom-sheet detected-sheet">
+            <div class="sheet-handle"></div>
+
+            <div class="detected-badge-header">
+                <div class="check-circle-pulse">✓</div>
+                <h3 id="detectedTitle">QR Code Detected!</h3>
+                <span class="detected-sub">क्यूआर कोड यशस्वीरित्या सापडला</span>
+            </div>
+
+            <!-- Merchant Card Details -->
+            <div class="detected-merchant-card">
+                <div class="merchant-avatar">🛺</div>
+                <div class="merchant-meta">
+                    <span class="meta-label">Payment Receiver (पैसे घेणारा):</span>
+                    <h4 class="merchant-name" id="detectedMerchantName">Sharma Auto Rickshaw</h4>
+                    <span class="merchant-upi" id="detectedUpiId">sharmaauto@demo</span>
+                    <span class="verified-tag">✓ Verified UPI Receiver</span>
+                </div>
+            </div>
+
+            <!-- Amount Showcase -->
+            <div class="detected-amount-box">
+                <span class="amt-label">Amount to Pay</span>
+                <div class="amt-row">
+                    <span class="amt-curr">₹</span>
+                    <span class="amt-value" id="detectedAmount">50</span>
+                </div>
+                <span class="amt-note">Demo Auto Fare (नकली भाडे)</span>
+            </div>
+
+            <!-- Demo Warning -->
+            <div class="warning-callout">
+                <span class="warn-icon">⚠</span>
+                <span class="warn-text"><strong>DEMO SIMULATION:</strong> No actual money will be taken from your bank account.</span>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="detected-actions">
+                <button type="button" class="btn btn-primary btn-large" id="btnContinueToPay">
+                    <span>Continue to Pay (पुढे जा)</span>
+                    <span class="btn-arrow">➔</span>
+                </button>
+                <button type="button" class="btn btn-secondary" id="btnRescan">
+                    <span>Scan Another Code</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Sample QR Codes Picker Modal -->
+    <div class="modal-backdrop" id="sampleQrModal" role="dialog" aria-modal="true">
+        <div class="bottom-sheet sample-qr-sheet">
+            <div class="sheet-header">
+                <h3>Choose a Sample QR to Practice</h3>
+                <button type="button" class="btn-close-modal" id="btnCloseSampleModal">✕</button>
+            </div>
+            <p class="sheet-sub">Tap any sample receiver below to test the full scanner workflow:</p>
+
+            <div class="sample-qr-list">
+                <div class="sample-qr-item" data-name="Sharma Auto Rickshaw" data-upi="sharmaauto@demo" data-amount="50" data-note="Passenger Fare">
+                    <div class="qr-item-icon">🛺</div>
+                    <div class="qr-item-info">
+                        <strong>Sharma Auto Rickshaw</strong>
+                        <span>sharmaauto@demo • Fare: ₹50</span>
+                    </div>
+                    <button class="btn btn-small btn-primary select-qr-btn">Scan This</button>
+                </div>
+
+                <div class="sample-qr-item" data-name="Green Fuel CNG Pump" data-upi="greencng@demo" data-amount="220" data-note="CNG Gas Refill">
+                    <div class="qr-item-icon">⛽</div>
+                    <div class="qr-item-info">
+                        <strong>Green Fuel CNG Pump</strong>
+                        <span>greencng@demo • Refill: ₹220</span>
+                    </div>
+                    <button class="btn btn-small btn-primary select-qr-btn">Scan This</button>
+                </div>
+
+                <div class="sample-qr-item" data-name="Raju Chai & Snacks" data-upi="rajuchai@demo" data-amount="20" data-note="Chai & Bun">
+                    <div class="qr-item-icon">☕</div>
+                    <div class="qr-item-info">
+                        <strong>Raju Chai & Snacks</strong>
+                        <span>rajuchai@demo • Tea: ₹20</span>
+                    </div>
+                    <button class="btn btn-small btn-primary select-qr-btn">Scan This</button>
+                </div>
+
+                <div class="sample-qr-item" data-name="City Auto Spare Parts" data-upi="cityauto@demo" data-amount="450" data-note="Brake Shoe Spare">
+                    <div class="qr-item-icon">🔧</div>
+                    <div class="qr-item-info">
+                        <strong>City Auto Spare Parts</strong>
+                        <span>cityauto@demo • Part: ₹450</span>
+                    </div>
+                    <button class="btn btn-small btn-primary select-qr-btn">Scan This</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Enter UPI ID Modal -->
+    <div class="modal-backdrop" id="manualUpiModal" role="dialog" aria-modal="true">
+        <div class="bottom-sheet manual-upi-sheet">
+            <div class="sheet-header">
+                <h3>Enter Demo UPI ID</h3>
+                <button type="button" class="btn-close-modal" id="btnCloseUpiModal">✕</button>
+            </div>
+            <p class="sheet-sub">Type any simulated UPI address or use the default demo receiver:</p>
+
+            <form id="manualUpiForm" class="manual-form">
+                <div class="form-group">
+                    <label for="inputUpiId">Recipient UPI ID</label>
+                    <input type="text" id="inputUpiId" class="form-control" placeholder="e.g. sharmaauto@demo" value="sharmaauto@demo" required>
+                    <span class="input-hint">Example format: name@bank or number@upi</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputUpiName">Recipient Name (Optional)</label>
+                    <input type="text" id="inputUpiName" class="form-control" placeholder="Sharma Auto Rickshaw" value="Sharma Auto Rickshaw">
+                </div>
+
+                <div class="form-group">
+                    <label for="inputUpiAmount">Fare Amount (₹)</label>
+                    <input type="number" id="inputUpiAmount" class="form-control" placeholder="50" value="50" min="1" max="10000" required>
+                </div>
+
+                <div class="warning-callout" style="margin-top: 10px;">
+                    <span class="warn-icon">ℹ️</span>
+                    <span class="warn-text">Any demo ID entered here will simulate a safe test transaction.</span>
+                </div>
+
+                <div class="sheet-actions" style="margin-top: 16px;">
+                    <button type="submit" class="btn btn-primary btn-large">
+                        <span>Proceed with UPI ID</span>
+                        <span class="btn-arrow">➔</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 4. How to Scan Instructions Modal -->
+    <div class="modal-backdrop" id="howToScanModal" role="dialog" aria-modal="true">
+        <div class="bottom-sheet howto-sheet">
+            <div class="sheet-header">
+                <h3>How to Scan a QR Code (कसे स्कॅन करावे?)</h3>
+                <button type="button" class="btn-close-modal" id="btnCloseHowToModal">✕</button>
+            </div>
+
+            <div class="howto-steps">
+                <div class="step-card">
+                    <span class="step-num">1</span>
+                    <div class="step-desc">
+                        <strong>Allow Camera Access</strong>
+                        <p>When prompted, tap <em>Allow</em> so your phone can see the QR code.</p>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">2</span>
+                    <div class="step-desc">
+                        <strong>Align Inside the Green Box</strong>
+                        <p>Hold your phone steady so the black-and-white QR code fills the square frame.</p>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">3</span>
+                    <div class="step-desc">
+                        <strong>Wait for Green Checkmark</strong>
+                        <p>The app will automatically read the receiver details in 1 second.</p>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">4</span>
+                    <div class="step-desc">
+                        <strong>Confirm Name Before Entering PIN</strong>
+                        <p>Always verify the passenger or shop name before proceeding.</p>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-large" id="btnGotItHowTo" style="margin-top: 18px;">
+                I Understand (समजले)
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript for Scanner -->
+    <script src="js/scanner.js"></script>
+</body>
+</html>

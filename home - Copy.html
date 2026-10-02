@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Virtual Dressing Room - Try clothes virtually before you buy. Experience real-time body tracking fashion technology.">
+    <title>VestiAI | AI Virtual Dressing Room & Store</title>
+
+    <!-- Global Luxury CSS -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/color-guide.css">
+</head>
+
+<body class="auth-guard-pending">
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="home.html" class="logo">
+                Vesti<span>AI</span> <span class="sparkle">✨</span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="home.html" class="active">Home</a>
+                <a href="#color-guide">Color Guide</a>
+                <a href="#color-theory">Color Theory</a>
+                <a href="home.html#categories">Categories</a>
+                <a href="home.html#how-it-works">How It Works</a>
+                <a href="home.html#products">Collection</a>
+                <a href="tryon.html">Virtual Try-On</a>
+                <a href="orders.html">My Orders</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="cart.html" class="nav-cart-btn" aria-label="View Shopping Cart">
+                    🛒
+                </a>
+                <a href="login.html" class="login-btn">Login</a>
+                <a href="register.html" class="signup-btn">Sign Up</a>
+            </div>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">☰</button>
+        </div>
+    </header>
+
+    <!-- ================= TOP SEARCH BAR ================= -->
+    <section class="top-search-section">
+        <div class="container">
+            <div class="search-bar-container">
+                <div class="search-bar-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input 
+                        type="text" 
+                        id="productSearchInput" 
+                        class="search-bar-input" 
+                        placeholder="Search designer dresses, evening gowns, floral silhouettes..." 
+                        aria-label="Search dresses and gowns"
+                        autocomplete="off"
+                    >
+                    <span id="searchResultCount" class="search-badge-count" style="display: none;"></span>
+                    <button type="button" id="clearSearchBtn" class="clear-search-btn" style="display: none;" aria-label="Clear search">✕</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= HERO ================= -->
+    <main>
+        <!-- ================= PROMOTIONAL DISCOUNT & OFFER BANNER ================= -->
+        <section class="promo-banner-section" id="promoSaleBanner">
+            <div class="container">
+                <div class="promo-banner-card">
+                    <div class="promo-badge-row">
+                        <span class="promo-tag pulse">⚡ Limited Time Offer</span>
+                        <span class="promo-tag glass">✨ New Dress Collection</span>
+                        <span class="promo-tag highlight">🔮 Virtual Try-On Available</span>
+                    </div>
+                    <div class="promo-content-grid">
+                        <div class="promo-text-col">
+                            <h2 class="promo-title">FASHION SALE IS LIVE!</h2>
+                            <p class="promo-discount">UP TO <span>50% OFF</span> ON SELECTED DRESSES</p>
+                            <p class="promo-subtitle">Try your favorite dress virtually before you buy with real-time AI body fitting.</p>
+                            <div class="promo-actions">
+                                <a href="#products" class="promo-cta-btn">
+                                    👗 SHOP DRESSES
+                                </a>
+                                <a href="tryon.html" class="promo-tryon-btn">
+                                    ✨ Try On In Studio →
+                                </a>
+                            </div>
+                        </div>
+                        <div class="promo-visual-col">
+                            <div class="promo-timer-box">
+                                <span class="timer-label">Flash Offer Ends In:</span>
+                                <div class="countdown-timer" id="promoCountdown">
+                                    <div class="timer-item"><span id="timerHours">12</span><label>Hours</label></div>
+                                    <span class="timer-sep">:</span>
+                                    <div class="timer-item"><span id="timerMins">45</span><label>Mins</label></div>
+                                    <span class="timer-sep">:</span>
+                                    <div class="timer-item"><span id="timerSecs">30</span><label>Secs</label></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero">
+            <div class="container hero-container">
+                
+                <div class="hero-content">
+                    <span class="hero-badge">
+                        ✨ NEXT-GEN AI FASHION EXPERIENCE
+                    </span>
+
+                    <h1 class="font-heading">
+                        Try It. <span>See It.</span> Love It.
+                    </h1>
+
+                    <p>
+                        Step into tomorrow's dressing room. Our real-time AI technology tracks your body posture to fit, drape, and preview garments instantly right through your camera.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="tryon.html" class="primary-btn">
+                            📷 Launch Virtual Studio
+                        </a>
+                        <a href="#products" class="secondary-btn">
+                            Explore Collection →
+                        </a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div>
+                            <strong>500+</strong>
+                            <span>Styles</span>
+                        </div>
+                        <div>
+                            <strong>AI-Fit</strong>
+                            <span>Precision</span>
+                        </div>
+                        <div>
+                            <strong>100%</strong>
+                            <span>Free Try-On</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <div class="hero-image-card">
+                        <div class="floating-card floating-card-one">
+                            ✨ Real-Time AI Tracking
+                        </div>
+                        <div class="floating-card floating-card-two">
+                            👗 Perfect Tailored Fit
+                        </div>
+                        <img
+                            src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=80"
+                            alt="Fashion model showcasing virtual dressing style"
+                        >
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= CATEGORIES ================= -->
+        <section class="categories section" id="categories">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="section-badge">CURATED EDITIONS</span>
+                    <h2>Shop By Category</h2>
+                    <p>Select any category below to instantly filter our collection and virtual fitting studio.</p>
+                </div>
+
+                <div class="category-grid">
+                    <!-- Category 1: Evening Gowns -->
+                    <div class="category-card" data-category="Evening Gowns" role="button" tabindex="0" title="View Evening & Gala Gowns">
+                        <span class="category-badge">Couture</span>
+                        <img
+                            src="assets/product/reddress.png"
+                            alt="Evening & Gala Gowns"
+                            onerror="this.src='assets/product/reddress.png'"
+                        >
+                        <div class="category-overlay">
+                            <h3>Evening & Gala Gowns</h3>
+                            <span>Explore 5+ Styles →</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 2: Floral Dresses -->
+                    <div class="category-card" data-category="Floral Dresses" role="button" tabindex="0" title="View Floral & Day Dresses">
+                        <span class="category-badge">Breezy</span>
+                        <img
+                            src="assets/product/dress3-removebg-preview.png"
+                            alt="Floral & Day Dresses"
+                            onerror="this.src='assets/product/dress3-removebg-preview.png'"
+                        >
+                        <div class="category-overlay">
+                            <h3>Floral & Day Dresses</h3>
+                            <span>Explore 4+ Styles →</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 3: Party Dresses -->
+                    <div class="category-card" data-category="Party Dresses" role="button" tabindex="0" title="View Party & Cocktail Dresses">
+                        <span class="category-badge">Glamour</span>
+                        <img
+                            src="assets/product/dress4-removebg-preview.png"
+                            alt="Party & Cocktail Dresses"
+                            onerror="this.src='assets/product/dress4-removebg-preview.png'"
+                        >
+                        <div class="category-overlay">
+                            <h3>Party & Cocktail Dresses</h3>
+                            <span>Explore 4+ Styles →</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 4: Summer Dresses -->
+                    <div class="category-card" data-category="Summer Dresses" role="button" tabindex="0" title="View Summer & Casual Dresses">
+                        <span class="category-badge">Effortless</span>
+                        <img
+                            src="assets/product/dress5-removebg-preview.png"
+                            alt="Summer & Casual Dresses"
+                            onerror="this.src='assets/product/dress5-removebg-preview.png'"
+                        >
+                        <div class="category-overlay">
+                            <h3>Summer & Casual Dresses</h3>
+                            <span>Explore 3+ Styles →</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= HOW IT WORKS ================= -->
+        <section class="how-it-works section" id="how-it-works" style="background: rgba(255, 255, 255, 0.6);">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="section-badge">SMART COMPUTER VISION</span>
+                    <h2>How Virtual Try-On Works</h2>
+                    <p>Revolutionizing online dress shopping in three effortless, interactive steps.</p>
+                </div>
+
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">01</div>
+                        <div class="step-icon">👗</div>
+                        <h3>Pick Your Dress</h3>
+                        <p>Browse through our dress collection or select any piece directly from our catalog to take into the studio.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">02</div>
+                        <div class="step-icon">🤳</div>
+                        <h3>Step in Front of Camera</h3>
+                        <p>Enable camera access or select our Studio Model. Our AI neural network identifies your body keypoints in real time.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">03</div>
+                        <div class="step-icon">✨</div>
+                        <h3>Real-time Fit & Snap</h3>
+                        <p>Watch dresses automatically size to your shoulders and hips, move with your motion, and snap a lookbook photo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= DISCOVER YOUR BEST COLORS SECTION ================= -->
+        <section class="color-guide-section" id="color-guide">
+            <div class="container">
+                <!-- Section Header -->
+                <div class="color-guide-header">
+                    <span class="section-badge">✨ INCLUSIVE FASHION AI</span>
+                    <h2>Discover Your <span>Best Colors</span></h2>
+                    <p>Find dress colors that complement your skin tone, undertone, and personal style.</p>
+                    <a href="#colorGuideWorkspace" class="guide-hero-cta" id="findMyColorsCta">
+                        Find My Colors →
+                    </a>
+                </div>
+
+                <div id="colorGuideWorkspace">
+                    <!-- Step Progress Indicator -->
+                    <div class="guide-step-bar-wrapper">
+                        <div class="guide-step-progress-row">
+                            <button type="button" class="step-indicator-item active" id="stepIndicator1">
+                                <span class="step-circle">1</span>
+                                <span>Skin Tone</span>
+                            </button>
+                            <button type="button" class="step-indicator-item" id="stepIndicator2">
+                                <span class="step-circle">2</span>
+                                <span>Undertone</span>
+                            </button>
+                            <button type="button" class="step-indicator-item" id="stepIndicator3">
+                                <span class="step-circle">3</span>
+                                <span>Palette & Preview</span>
+                            </button>
+                        </div>
+                        <div class="step-progress-badge-text" id="stepProgressText">
+                            Step 1 of 3 — Select Skin Tone Depth
+                        </div>
+                    </div>
+
+                    <!-- STEP 1: SKIN TONE DEPTH SELECTION -->
+                    <div class="skin-tone-step-container" id="colorGuideStep1">
+                        <p class="step-lead-text">
+                            Select the shade that most closely reflects your natural skin-tone depth. Every complexion has unique beauty and glowing possibilities.
+                        </p>
+                        <div class="skin-tone-grid" id="skinToneGrid">
+                            <!-- Populated dynamically by color-guide.js -->
+                        </div>
+                        <div class="step-action-bar">
+                            <button type="button" class="primary-btn pulse-cta" id="step1NextBtn">
+                                Continue to Undertone →
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2: UNDERTONE SELECTION -->
+                    <div class="undertone-step-container" id="colorGuideStep2" style="display: none;">
+                        <p class="step-lead-text">
+                            Your undertone is the subtle hue beneath your skin surface that never changes, even when you tan.
+                        </p>
+                        <div class="undertone-help-row">
+                            <button type="button" class="undertone-help-link-btn" id="openUndertoneHelpBtn">
+                                💡 Help me find my undertone
+                            </button>
+                            <button type="button" class="undertone-help-link-btn" id="launchUndertoneQuizBtn">
+                                🔮 Not sure? Take our 60s quiz
+                            </button>
+                        </div>
+                        <div class="undertone-grid" id="undertoneGrid">
+                            <!-- Populated dynamically by color-guide.js -->
+                        </div>
+                        <div class="step-action-bar">
+                            <button type="button" class="secondary-btn" id="step2PrevBtn">
+                                ← Back to Skin Tone
+                            </button>
+                            <button type="button" class="primary-btn pulse-cta" id="step2NextBtn">
+                                Reveal My Color Palette & Studio →
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 3: COLOR PALETTE & INTERACTIVE DRESS PREVIEW -->
+                    <div class="palette-step-container" id="colorGuideStep3" style="display: none;">
+                        <!-- Summary Header & Controls -->
+                        <div class="palette-summary-header">
+                            <div class="palette-user-badges">
+                                <span class="profile-chip" id="activeToneChip">Medium Tone</span>
+                                <span class="profile-chip" id="activeUndertoneChip">☀️ Warm Undertone</span>
+                            </div>
+                            <div class="palette-nav-actions">
+                                <button type="button" class="palette-edit-btn" id="step3BackBtn">
+                                    ← Change Undertone
+                                </button>
+                                <button type="button" class="palette-edit-btn" id="step3ResetBtn">
+                                    ↺ Restart Guide
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Contrast & Depth Insight Banner -->
+                        <div class="palette-depth-banner">
+                            <span class="sparkle-icon">✨</span>
+                            <p id="paletteDepthAdvice">
+                                Personalized contrast analysis loading...
+                            </p>
+                        </div>
+
+                        <!-- Category Filter Pills -->
+                        <div class="palette-categories-bar" id="paletteCategoryBar">
+                            <button type="button" class="palette-category-pill active" data-category="all">
+                                All Recommendations
+                            </button>
+                            <button type="button" class="palette-category-pill" data-category="bestMatches">
+                                ✨ Best Matches
+                            </button>
+                            <button type="button" class="palette-category-pill" data-category="softElegant">
+                                🌸 Soft & Elegant
+                            </button>
+                            <button type="button" class="palette-category-pill" data-category="boldVibrant">
+                                🔥 Bold & Vibrant
+                            </button>
+                            <button type="button" class="palette-category-pill" data-category="classicNeutrals">
+                                🖤 Classic Neutrals
+                            </button>
+                            <button type="button" class="palette-category-pill" data-category="tryTheseToo">
+                                🎨 Try These Too
+                            </button>
+                        </div>
+
+                        <!-- Main Studio Layout: Swatches Catalog + Interactive Dress Preview -->
+                        <div class="palette-studio-layout">
+                            <!-- Left: Interactive Swatches -->
+                            <div class="swatches-catalog-card">
+                                <div class="swatches-header-row">
+                                    <h3>Colors That Complement You</h3>
+                                    <span class="swatches-hint">Click any swatch to preview</span>
+                                </div>
+                                <div class="palette-swatches-grid" id="paletteSwatchesGrid">
+                                    <!-- Swatches rendered dynamically -->
+                                </div>
+                            </div>
+
+                            <!-- Right: Interactive Model & Dress Preview -->
+                            <div class="dress-preview-stage-card">
+                                <div class="stage-silhouette-bar">
+                                    <button type="button" class="silhouette-pill active" data-silhouette="gown">
+                                        Couture Gala Gown
+                                    </button>
+                                    <button type="button" class="silhouette-pill" data-silhouette="slip">
+                                        Silk Slip Midi
+                                    </button>
+                                    <button type="button" class="silhouette-pill" data-silhouette="aline">
+                                        A-Line Flare
+                                    </button>
+                                </div>
+
+                                <div class="stage-canvas-wrapper">
+                                    <div class="preview-model-aura" id="previewModelAura"></div>
+                                    
+                                    <!-- Haute Couture Model SVG Illustration with Dynamic Skin & Dress Fill -->
+                                    <svg class="model-illustration-svg" viewBox="0 0 320 540" xmlns="http://www.w3.org/2000/svg" aria-label="Fashion Model Dress Preview">
+                                        <!-- Model Body (Legs & Shoes) -->
+                                        <g id="modelLegs">
+                                            <!-- Legs -->
+                                            <path class="model-skin-fill" d="M142,390 L140,500 L146,505 L150,390 Z" fill="#C68E6A" />
+                                            <path class="model-skin-fill" d="M165,390 L168,500 L174,505 L173,390 Z" fill="#C68E6A" />
+                                            <!-- High Heels -->
+                                            <path d="M138,498 L147,506 L143,518 L138,518 Z" fill="#0f172a" />
+                                            <path d="M167,498 L175,506 L171,518 L166,518 Z" fill="#0f172a" />
+                                        </g>
+
+                                        <!-- Model Torso & Head -->
+                                        <g id="modelBase">
+                                            <!-- Neck & Décolletage -->
+                                            <path class="model-skin-fill" d="M148,90 L168,90 L172,130 L144,130 Z" fill="#C68E6A" />
+                                            <!-- Shoulders & Upper Chest -->
+                                            <path class="model-skin-fill" d="M110,132 C130,122 186,122 206,132 C214,142 216,180 212,220 L198,220 C202,175 196,145 174,142 L142,142 C120,145 114,175 118,220 L104,220 C100,180 102,142 110,132 Z" fill="#C68E6A" />
+                                            <!-- Head & Facial Contour -->
+                                            <ellipse class="model-skin-fill" cx="158" cy="62" rx="16" ry="22" fill="#C68E6A" />
+                                            <!-- Stylized Hair -->
+                                            <path d="M142,54 C140,32 176,32 174,54 C175,64 168,70 174,78 C160,82 150,78 142,70 C146,62 142,58 142,54 Z" fill="#1e1b18" />
+                                            <circle cx="166" cy="38" r="10" fill="#1e1b18" />
+                                            <!-- Elegant Features Hint -->
+                                            <path d="M154,66 Q158,69 162,66" stroke="#9a3412" stroke-width="1.2" fill="none" opacity="0.6" />
+                                            <path d="M152,58 Q155,56 158,58" stroke="#1e1b18" stroke-width="1.2" fill="none" />
+                                            <path d="M162,58 Q165,56 168,58" stroke="#1e1b18" stroke-width="1.2" fill="none" />
+                                        </g>
+
+                                        <!-- ================= DRESS SILHOUETTE 1: COUTURE GALA GOWN ================= -->
+                                        <g id="silhouetteGown" class="dress-silhouette-group">
+                                            <!-- Gown Bodice -->
+                                            <path class="model-dress-fill" d="M130,135 C145,148 171,148 186,135 C192,160 188,198 178,224 C168,226 148,226 138,224 C128,198 124,160 130,135 Z" fill="#CC5A36" />
+                                            <!-- Bodice Center Contour / Fold -->
+                                            <path class="model-dress-shadow" d="M155,145 L158,225 L161,225 L161,145 Z" fill="#9e3a1b" opacity="0.3" />
+                                            <!-- Cinched Empire Waistband -->
+                                            <path class="model-dress-shadow" d="M136,220 C148,224 168,224 180,220 L181,228 C168,232 148,232 135,228 Z" fill="#9e3a1b" opacity="0.45" />
+                                            <!-- Flowing Cascading Gown Skirt -->
+                                            <path class="model-dress-fill" d="M135,228 C150,232 166,232 181,228 C196,275 224,370 238,450 C205,462 111,462 78,450 C92,370 120,275 135,228 Z" fill="#CC5A36" />
+                                            <!-- Skirt Drapes and Highlights -->
+                                            <path class="model-dress-shadow" d="M138,230 Q124,340 108,454 Q128,457 142,456 Q150,340 148,230 Z" fill="#9e3a1b" opacity="0.25" />
+                                            <path class="model-dress-highlight" d="M152,230 Q156,340 162,457 Q174,457 186,454 Q172,340 166,230 Z" fill="#f08867" opacity="0.3" />
+                                            <path class="model-dress-shadow" d="M174,230 Q192,340 216,452 Q228,450 238,450 Q218,340 180,230 Z" fill="#9e3a1b" opacity="0.2" />
+                                        </g>
+
+                                        <!-- ================= DRESS SILHOUETTE 2: SILK SLIP MIDI ================= -->
+                                        <g id="silhouetteSlip" class="dress-silhouette-group" style="display: none;">
+                                            <!-- Spaghetti Straps -->
+                                            <line x1="138" y1="126" x2="140" y2="144" stroke="#CC5A36" stroke-width="2" class="model-dress-fill" />
+                                            <line x1="178" y1="126" x2="176" y2="144" stroke="#CC5A36" stroke-width="2" class="model-dress-fill" />
+                                            <!-- Cowl Neck Bodice -->
+                                            <path class="model-dress-fill" d="M136,144 C148,154 168,154 180,144 C188,180 184,222 178,236 C165,240 151,240 138,236 C132,222 128,180 136,144 Z" fill="#CC5A36" />
+                                            <!-- Cowl Fold -->
+                                            <path d="M140,147 Q158,162 176,147" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.4" class="model-dress-highlight" />
+                                            <!-- Fluid Bias-Cut Midi Skirt with Side Slit -->
+                                            <path class="model-dress-fill" d="M138,236 C151,240 165,240 178,236 C186,290 196,350 200,396 C178,402 144,402 124,396 C126,350 132,290 138,236 Z" fill="#CC5A36" />
+                                            <!-- Slit reveal line -->
+                                            <path d="M172,320 L176,398" stroke="#ffffff" stroke-width="1.2" opacity="0.5" />
+                                            <path class="model-dress-shadow" d="M146,240 Q142,320 136,396 L144,398 Q152,320 152,240 Z" fill="#9e3a1b" opacity="0.25" />
+                                        </g>
+
+                                        <!-- ================= DRESS SILHOUETTE 3: A-LINE FLARE MIDI ================= -->
+                                        <g id="silhouetteAline" class="dress-silhouette-group" style="display: none;">
+                                            <!-- Fitted Sleeveless Bodice -->
+                                            <path class="model-dress-fill" d="M132,130 C146,138 170,138 184,130 C188,160 184,204 175,225 C164,228 152,228 141,225 C132,204 128,160 132,130 Z" fill="#CC5A36" />
+                                            <!-- Belt Ribbon -->
+                                            <path class="model-dress-shadow" d="M140,222 L176,222 L177,229 L139,229 Z" fill="#9e3a1b" opacity="0.5" />
+                                            <!-- Flared Pleated Skirt -->
+                                            <path class="model-dress-fill" d="M139,229 L177,229 C192,280 218,340 228,390 C186,400 130,400 88,390 C98,340 124,280 139,229 Z" fill="#CC5A36" />
+                                            <!-- Pleat Creases -->
+                                            <path class="model-dress-shadow" d="M146,230 L128,392 L136,393 L150,230 Z" fill="#9e3a1b" opacity="0.3" />
+                                            <path class="model-dress-shadow" d="M170,230 L188,392 L180,393 L166,230 Z" fill="#9e3a1b" opacity="0.3" />
+                                            <path class="model-dress-highlight" d="M156,230 L156,395 L162,395 L160,230 Z" fill="#ffffff" opacity="0.25" />
+                                        </g>
+
+                                        <!-- Slender Arms Resting Pose -->
+                                        <g id="modelArms">
+                                            <!-- Left Arm -->
+                                            <path class="model-skin-fill" d="M110,140 C102,175 98,220 95,255 C98,258 104,258 106,254 C108,220 114,180 120,150 Z" fill="#C68E6A" />
+                                            <!-- Right Arm -->
+                                            <path class="model-skin-fill" d="M206,140 C214,175 218,220 221,255 C218,258 212,258 210,254 C208,220 202,180 196,150 Z" fill="#C68E6A" />
+                                        </g>
+                                    </svg>
+                                </div>
+
+                                <!-- Active Selected Color Commentary & "Why it Works" -->
+                                <div class="preview-commentary-box">
+                                    <div class="preview-commentary-header">
+                                        <div class="preview-color-title-wrap">
+                                            <span class="preview-color-tag" id="previewColorTag"></span>
+                                            <span class="preview-color-name" id="previewColorTitle">Terracotta Sunset</span>
+                                            <span class="preview-hex-code" id="previewColorHex">#CC5A36</span>
+                                        </div>
+                                        <span class="preview-contrast-badge" id="previewColorContrast">Harmonious</span>
+                                    </div>
+                                    <p class="preview-why-text" id="previewColorWhy">
+                                        Brings out the golden glow in your complexion while creating an earthy, romantic aura.
+                                    </p>
+                                    <div class="stage-bridge-buttons">
+                                        <button type="button" class="filter-collection-btn" id="filterCatalogByColorBtn">
+                                            Shop Terracotta Dresses in Collection ↓
+                                        </button>
+                                        <a href="tryon.html" class="launch-tryon-link-btn">
+                                            <span>✨ Try In Virtual AI Studio →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Important Fashion Philosophy Principle -->
+                        <div class="fashion-philosophy-banner">
+                            <span class="philosophy-icon">🌸</span>
+                            <p>
+                                <strong>Our Styling Philosophy:</strong> These recommendations are curated to celebrate and highlight your natural radiance—<strong>not</strong> to restrict you. If you adore a color outside your palette, wear it with confidence! Lighting, styling, accessories, and individual joy always make the final statement.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= FASHION COLOR THEORY MASTERCLASS SECTION ================= -->
+        <section class="color-theory-section" id="color-theory">
+            <div class="container">
+                <div class="color-theory-header">
+                    <span class="section-badge">HAUTE COUTURE KNOWLEDGE</span>
+                    <h2>The Science of <span>Fashion Color Theory</span></h2>
+                    <p>
+                        Mastering color harmonies, fabric sheens, and personal contrast unlocks endless styling mastery.
+                    </p>
+                </div>
+
+                <div class="color-theory-pillars-grid" id="colorTheoryPillarsContainer">
+                    <!-- Populated dynamically by color-guide.js with Color Wheel, Harmonies, Hue/Value, Fabrics & Contrast -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= UNDERTONE DIAGNOSTIC QUIZ MODAL ================= -->
+        <div class="guide-modal-overlay" id="undertoneQuizModal" role="dialog" aria-modal="true" aria-labelledby="quizModalTitle">
+            <div class="guide-modal-card">
+                <button type="button" class="modal-close-btn" id="closeUndertoneQuizBtn" aria-label="Close Quiz">✕</button>
+                <div class="modal-header">
+                    <span class="modal-badge">🔮 AI UNDERTONE DIAGNOSTIC</span>
+                    <h3 class="modal-title" id="quizModalTitle">Discover Your Undertone</h3>
+                    <p id="quizProgressNumber" style="color: var(--primary-dark); font-weight: 600; margin-top: 6px;">Question 1 of 4</p>
+                </div>
+
+                <div class="quiz-progress-bar-wrap">
+                    <div class="quiz-progress-bar-fill" id="quizProgressBarFill"></div>
+                </div>
+
+                <div id="quizQuestionsContainer">
+                    <!-- Rendered by color-guide.js -->
+                </div>
+
+                <div class="quiz-result-box" id="quizResultCard" style="display: none;">
+                    <div class="result-icon-badge" id="quizResultToneIcon">✨</div>
+                    <h3 class="result-tone-title" id="quizResultToneTitle">Your Likely Undertone: Warm</h3>
+                    <p class="result-tone-desc" id="quizResultToneDesc">
+                        Skin has golden, peach, or yellow undertones that radiate with warm earth tones and yellow gold.
+                    </p>
+                    <button type="button" class="apply-quiz-result-btn" id="applyQuizResultBtn">
+                        Apply Undertone & See My Colors →
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= UNDERTONE HELP GUIDE MODAL ================= -->
+        <div class="guide-modal-overlay" id="undertoneHelpModal" role="dialog" aria-modal="true" aria-labelledby="helpModalTitle">
+            <div class="guide-modal-card">
+                <button type="button" class="modal-close-btn" id="closeUndertoneHelpBtn" aria-label="Close Guide">✕</button>
+                <div class="modal-header">
+                    <span class="modal-badge">💡 STYLING GUIDE</span>
+                    <h3 class="modal-title" id="helpModalTitle">How to Identify Your Undertone</h3>
+                    <p style="color: var(--text-muted); margin-top: 6px;">Use these four simple, time-tested fashion tests to find your undertone.</p>
+                </div>
+
+                <div class="help-guide-tests-grid">
+                    <div class="help-test-card">
+                        <span class="help-test-icon">🩸</span>
+                        <div>
+                            <h4>1. The Wrist Vein Test</h4>
+                            <p>Under natural daylight, look at your inner wrist. If veins look <strong>greenish or olive</strong>, you are warm. If they appear <strong>blue or purple</strong>, you are cool. If they look <strong>blue-green</strong>, you are neutral or olive.</p>
+                        </div>
+                    </div>
+
+                    <div class="help-test-card">
+                        <span class="help-test-icon">👑</span>
+                        <div>
+                            <h4>2. Gold vs. Silver Jewelry</h4>
+                            <p>Hold yellow gold and bright silver jewelry against your skin. If <strong>yellow gold</strong> illuminates you, your undertone is warm. If <strong>silver</strong> makes you pop, you're cool. If <strong>both</strong> look stunning, you're neutral. If <strong>antique bronze or rose gold</strong> looks best, you're olive.</p>
+                        </div>
+                    </div>
+
+                    <div class="help-test-card">
+                        <span class="help-test-icon">☀️</span>
+                        <div>
+                            <h4>3. Sunlight & Tanning Reaction</h4>
+                            <p>If you <strong>burn quickly</strong> and tan slowly, you lean cool. If you <strong>tan readily</strong> with golden or bronze depth, you lean warm. If you burn slightly then tan smoothly, you are neutral. If you develop a golden-ash olive tan, you're olive.</p>
+                        </div>
+                    </div>
+
+                    <div class="help-test-card">
+                        <span class="help-test-icon">👗</span>
+                        <div>
+                            <h4>4. White Fabric Test</h4>
+                            <p>Drape a sheet of stark, bright white fabric under your chin in natural daylight. Warm undertones look healthier with creamy off-white, while cool undertones look vibrant against pure, crisp white.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= FEATURED PRODUCTS ================= -->
+        <section class="products section" id="products">
+            <div class="container">
+                <div class="product-heading">
+                    <div>
+                        <span class="section-badge">CURATED DRESSES</span>
+                        <h2 id="collectionTitle">Designer Dress Collection</h2>
+                    </div>
+                    <a href="tryon.html" class="outline-btn">
+                        Open Studio Room →
+                    </a>
+                </div>
+
+                <!-- Category Filter Pills (Dresses Only) -->
+                <div class="collection-filter-bar" id="categoryFilterBar">
+                    <button type="button" class="filter-pill active" data-filter="all">All Dresses</button>
+                    <button type="button" class="filter-pill" data-filter="Evening Gowns">👗 Evening Gowns</button>
+                    <button type="button" class="filter-pill" data-filter="Floral Dresses">🌸 Floral Dresses</button>
+                    <button type="button" class="filter-pill" data-filter="Party Dresses">✨ Party Dresses</button>
+                    <button type="button" class="filter-pill" data-filter="Summer Dresses">☀️ Summer Dresses</button>
+                </div>
+
+                <!-- DYNAMIC GRID POPULATED BY products.js -->
+                <div id="featuredProductsGrid" class="product-grid">
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--text-muted);">
+                        Loading fashion collection...
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TRY-ON CTA BANNER ================= -->
+        <section class="container">
+            <div class="try-on-cta">
+                <div class="try-on-cta-content">
+                    <span class="hero-badge" style="background: rgba(255,255,255,0.15); color: white; border-color: rgba(255,255,255,0.3);">
+                        🔮 AI EXPERIENCE
+                    </span>
+                    <h2>Ready to see how you look before buying?</h2>
+                    <p>
+                        No guesswork. No wrong sizes. Experience frictionless, interactive virtual fitting with zero app installation needed.
+                    </p>
+                    <a href="tryon.html" class="primary-btn" style="background: white; color: var(--dark); box-shadow: none;">
+                        Start Virtual Try-On →
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="home.html" class="logo">
+                    Vesti<span>AI</span>
+                </a>
+                <p>
+                    Redefining digital retail through computer vision, pose estimation, and immersive fashion experiences.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="home.html">Home</a>
+                <a href="#color-guide">Color Guide</a>
+                <a href="#color-theory">Color Theory</a>
+                <a href="home.html#categories">Categories</a>
+                <a href="home.html#products">Collection</a>
+                <a href="tryon.html">Virtual Studio</a>
+                <a href="orders.html">My Orders</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Account</h3>
+                <a href="cart.html">Shopping Bag</a>
+                <a href="orders.html">My Orders</a>
+                <a href="profile.html">My Profile</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p>📧 support@vestiai.com</p>
+                <p>📱 +91 98765 43210</p>
+                <p>📍 AI Fashion Tech Lab</p>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>© 2026 VestiAI. All Rights Reserved.</p>
+            <p>AI Virtual Dressing Room Platform</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script type="module" src="js/auth-guard.js"></script>
+    <script type="module" src="js/products.js"></script>
+    <script type="module" src="js/color-guide.js"></script>
+
+</body>
+</html>

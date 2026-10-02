@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Digital Payment Learning Simulator for Auto-Rickshaw Drivers. Learn UPI QR scanning and payments safely with zero risk.">
+    <title>AutoPay Saathi | UPI Payment Simulator for Auto Drivers</title>
+    
+    <!-- Google Fonts: Poppins & Noto Sans for clear bilingual accessibility -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Primary Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="simulator-body">
+
+    <!-- Top Mandatory Educational Safety Banner -->
+    <header class="top-demo-banner" role="banner">
+        <div class="banner-content">
+            <span class="pulse-dot">🔵</span>
+            <strong>DEMO MODE | NO REAL MONEY | EDUCATIONAL SIMULATOR</strong>
+        </div>
+    </header>
+
+    <!-- App Wrapper (Mobile Phone Frame on Desktop / Native on Mobile) -->
+    <div class="app-viewport">
+
+        <!-- Top App Bar -->
+        <header class="app-header">
+            <div class="header-left">
+                <div class="brand-avatar">🛺</div>
+                <div class="brand-text">
+                    <h1 class="brand-title">AutoPay Saathi</h1>
+                    <p class="brand-sub">ऑटो चालक डिजिटल प्रशिक्षण केंद्र</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <span class="badge-demo">DEMO APP</span>
+            </div>
+        </header>
+
+        <!-- Main Scrollable Content -->
+        <main class="main-content" id="mainContent">
+
+            <!-- Welcome & Practice Wallet Balance Card -->
+            <section class="wallet-card">
+                <div class="wallet-top">
+                    <div>
+                        <span class="greeting-tag">नमस्ते चालक साथी! 🙏</span>
+                        <h2 class="wallet-label">Demo Training Balance (नकली बॅलन्स)</h2>
+                    </div>
+                    <span class="wallet-status-badge">अभ्यास खातं</span>
+                </div>
+                <div class="wallet-amount-row">
+                    <span class="currency-symbol">₹</span>
+                    <span class="wallet-balance" id="displayBalance">1,500</span>
+                    <span class="balance-note">Zero Real Money</span>
+                </div>
+                <div class="wallet-disclaimer">
+                    <span class="info-icon">ℹ️</span>
+                    <span>This balance is only for practice. Real money is not deducted or received.</span>
+                </div>
+            </section>
+
+            <!-- Main Primary Action: Scan & Pay Hero Card -->
+            <section class="hero-action-section">
+                <div class="scan-hero-card">
+                    <div class="scan-hero-graphic">
+                        <div class="scanner-laser-preview"></div>
+                        <div class="qr-mock-box">
+                            <span class="qr-icon-large">📷</span>
+                        </div>
+                    </div>
+                    <div class="scan-hero-info">
+                        <h3>Scan & Pay Practice</h3>
+                        <p>Learn how to scan any passenger QR code or test simulated fares safely.</p>
+                        <a href="scanner.html" class="btn btn-primary btn-large btn-glow" id="startScannerHeroBtn">
+                            <span class="btn-icon">⚡</span>
+                            <span>Open QR Scanner (स्कॅनर उघडा)</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Action Grid -->
+            <section class="quick-actions-section">
+                <h3 class="section-title">Quick Actions (झटपट पर्याय)</h3>
+                <div class="actions-grid">
+                    <a href="scanner.html?mode=camera" class="action-card" id="btnActionScan">
+                        <div class="action-icon-circle bg-orange">📷</div>
+                        <span class="action-name">Start Scanner</span>
+                        <span class="action-sub">कॅमेरा स्कॅन</span>
+                    </a>
+                    <a href="scanner.html?mode=upload" class="action-card" id="btnActionUpload">
+                        <div class="action-icon-circle bg-purple">🖼️</div>
+                        <span class="action-name">Upload QR</span>
+                        <span class="action-sub">फोटो निवडा</span>
+                    </a>
+                    <a href="scanner.html?mode=manual" class="action-card" id="btnActionManual">
+                        <div class="action-icon-circle bg-blue">⌨️</div>
+                        <span class="action-name">Enter UPI ID</span>
+                        <span class="action-sub">आयडी टाका</span>
+                    </a>
+                    <a href="transactions.html" class="action-card" id="btnActionHistory">
+                        <div class="action-icon-circle bg-green">📜</div>
+                        <span class="action-name">Transactions</span>
+                        <span class="action-sub">हिशोब वही</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Sample Scenarios for Auto Rickshaw Drivers -->
+            <section class="practice-scenarios-section">
+                <div class="section-header-row">
+                    <h3 class="section-title">Practice Common Fares (सराव भाडे)</h3>
+                    <span class="pill-hint">Click to test</span>
+                </div>
+
+                <div class="scenario-cards-list">
+                    <!-- Scenario 1: Standard Auto Fare -->
+                    <a href="payment.html?name=Sharma%20Auto%20Rickshaw&upi=sharmaauto@demo&amount=50&reason=Passenger%20Trip%20Fare" class="scenario-card">
+                        <div class="scenario-badge-icon">🛺</div>
+                        <div class="scenario-details">
+                            <div class="scenario-title-row">
+                                <h4 class="scenario-name">Sharma Auto Rickshaw</h4>
+                                <span class="scenario-amount">₹50</span>
+                            </div>
+                            <p class="scenario-desc">Standard meter fare for passenger trip • UPI: sharmaauto@demo</p>
+                        </div>
+                        <span class="scenario-arrow">➔</span>
+                    </a>
+
+                    <!-- Scenario 2: CNG / Fuel Station -->
+                    <a href="payment.html?name=Green%20CNG%20Station&upi=greencng@demo&amount=250&reason=CNG%20Auto%20Refill" class="scenario-card">
+                        <div class="scenario-badge-icon">⛽</div>
+                        <div class="scenario-details">
+                            <div class="scenario-title-row">
+                                <h4 class="scenario-name">Green CNG Fuel Pump</h4>
+                                <span class="scenario-amount">₹250</span>
+                            </div>
+                            <p class="scenario-desc">Gas refill payment practice • UPI: greencng@demo</p>
+                        </div>
+                        <span class="scenario-arrow">➔</span>
+                    </a>
+
+                    <!-- Scenario 3: Tea & Snack Stall -->
+                    <a href="payment.html?name=Raju%20Chai%20Stall&upi=rajuchai@demo&amount=20&reason=Chai%20and%20Snack" class="scenario-card">
+                        <div class="scenario-badge-icon">☕</div>
+                        <div class="scenario-details">
+                            <div class="scenario-title-row">
+                                <h4 class="scenario-name">Raju Tea Stall</h4>
+                                <span class="scenario-amount">₹20</span>
+                            </div>
+                            <p class="scenario-desc">Quick daily micro-payment • UPI: rajuchai@demo</p>
+                        </div>
+                        <span class="scenario-arrow">➔</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Section 11: Safety Education for Auto Drivers -->
+            <section class="safety-education-section" id="safetySection">
+                <div class="safety-header-card">
+                    <div class="safety-icon-big">🛡️</div>
+                    <div>
+                        <h3 class="safety-title">Stay Safe (सुरक्षित रहा)</h3>
+                        <p class="safety-subtitle">5 Golden Rules every driver must know</p>
+                    </div>
+                </div>
+
+                <div class="safety-rules-grid">
+                    <div class="safety-rule-card critical">
+                        <span class="rule-icon">🚨</span>
+                        <div class="rule-text">
+                            <strong>NEVER enter UPI PIN to RECEIVE money!</strong>
+                            <p>पैसे घेण्यासाठी कधीही पिन टाकू नका. Money enters your bank directly. If someone asks for PIN to give you fare, IT IS A SCAM!</p>
+                        </div>
+                    </div>
+
+                    <div class="safety-rule-card">
+                        <span class="rule-icon">🔒</span>
+                        <div class="rule-text">
+                            <strong>Never share your UPI PIN with anyone</strong>
+                            <p>Do not tell your PIN to passengers, friends, or even bank officers.</p>
+                        </div>
+                    </div>
+
+                    <div class="safety-rule-card">
+                        <span class="rule-icon">👁️</span>
+                        <div class="rule-text">
+                            <strong>Always verify Receiver Name before paying</strong>
+                            <p>Always cross-check the shopkeeper or driver name displayed on screen before pressing Pay.</p>
+                        </div>
+                    </div>
+
+                    <div class="safety-rule-card">
+                        <span class="rule-icon">⚠️</span>
+                        <div class="rule-text">
+                            <strong>Do not scan unknown or suspicious QR codes</strong>
+                            <p>Only scan QR codes pasted clearly at shops, petrol pumps, or auto stands.</p>
+                        </div>
+                    </div>
+
+                    <div class="safety-rule-card">
+                        <span class="rule-icon">🚫</span>
+                        <div class="rule-text">
+                            <strong>Never share OTP or banking passwords</strong>
+                            <p>Bank OTP messages are private keys to your account. Never forward them.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 10: Learning Assistant for Beginners -->
+            <section class="learning-assistant-section" id="learningAssistantSection">
+                <div class="assistant-header">
+                    <span class="assistant-avatar">🤖</span>
+                    <div>
+                        <h3 class="assistant-title">Need Help? (मदत केंद्र)</h3>
+                        <p class="assistant-subtitle">Tap questions below for simple, step-by-step guidance</p>
+                    </div>
+                </div>
+
+                <div class="faq-accordion" id="faqAccordion">
+                    
+                    <!-- Question 1 -->
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false" onclick="toggleFaq(this)">
+                            <span class="faq-q-text">1. How do I scan a QR code? (क्यूआर कसा स्कॅन करावा?)</span>
+                            <span class="faq-chevron">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <ol class="step-guide-list">
+                                <li>Tap on <strong>Scan & Pay</strong> button.</li>
+                                <li>Point your phone camera steadily at the customer or shop QR code.</li>
+                                <li>Wait 1 second until the green frame beeps and detects the code.</li>
+                                <li>Check the receiver's name and amount on screen.</li>
+                                <li>Enter your 4-digit demo PIN and confirm!</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false" onclick="toggleFaq(this)">
+                            <span class="faq-q-text">2. How do I pay someone? (दुसऱ्याला पैसे कसे पाठवायचे?)</span>
+                            <span class="faq-chevron">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Scan their QR code or enter their UPI ID. Enter the exact fare amount (e.g., ₹50). Confirm their verified name on screen, then type your Secret PIN to transfer.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false" onclick="toggleFaq(this)">
+                            <span class="faq-q-text">3. What is a UPI ID? (यूपीआय आयडी म्हणजे काय?)</span>
+                            <span class="faq-chevron">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>A UPI ID is like a digital address for your bank account (example: <code>sharmaauto@demo</code> or <code>9876543210@bank</code>). It allows you to receive money without revealing your bank account number or branch code.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false" onclick="toggleFaq(this)">
+                            <span class="faq-q-text">4. What does "Payment Successful" mean? (यशस्वी पेमेंट म्हणजे काय?)</span>
+                            <span class="faq-chevron">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>It means money has successfully moved into the receiver's bank account. Both the sender and receiver will get an immediate confirmation message and sound notification.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false" onclick="toggleFaq(this)">
+                            <span class="faq-q-text">5. What does "Payment Pending" mean? (पेंडिंग पेमेंट म्हणजे काय?)</span>
+                            <span class="faq-chevron">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>A pending status means the bank servers or internet are taking extra time. Do NOT make another payment immediately. Wait 2–3 minutes and tap "Check Status" in your transaction history.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false" onclick="toggleFaq(this)">
+                            <span class="faq-q-text">6. What does "Payment Failed" mean? (पेमेंट फेल का होते?)</span>
+                            <span class="faq-chevron">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Payment failed means no money was deducted. Common causes include weak mobile network, incorrect UPI PIN, or bank server maintenance. You can safely try again.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Bottom Disclaimer Card -->
+            <footer class="simulator-footer-note">
+                <p><strong>Note for Instructors & Drivers:</strong></p>
+                <p>This simulator runs entirely locally inside your browser. No personal data, bank credentials, or actual payments are processed.</p>
+            </footer>
+
+            <!-- Extra spacer for bottom navigation -->
+            <div class="nav-spacer"></div>
+
+        </main>
+
+        <!-- Bottom Navigation Bar (Section 13) -->
+        <nav class="bottom-nav" role="navigation" aria-label="Main Navigation">
+            <a href="index.html" class="nav-link active" id="navHome">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-text">Home</span>
+            </a>
+            <a href="#safetySection" class="nav-link" id="navLearn">
+                <span class="nav-icon">📚</span>
+                <span class="nav-text">Learn</span>
+            </a>
+            <a href="scanner.html" class="nav-link nav-fab-center" id="navScanPay" title="Scan & Pay">
+                <div class="nav-fab-btn">
+                    <span class="nav-fab-icon">📷</span>
+                </div>
+                <span class="nav-text">Scan & Pay</span>
+            </a>
+            <a href="transactions.html" class="nav-link" id="navTxns">
+                <span class="nav-icon">📜</span>
+                <span class="nav-text">Transactions</span>
+            </a>
+            <a href="#learningAssistantSection" class="nav-link" id="navHelp">
+                <span class="nav-icon">❓</span>
+                <span class="nav-text">Help</span>
+            </a>
+        </nav>
+
+    </div>
+
+    <!-- Inline Lightweight Script for index interactions -->
+    <script>
+        function toggleFaq(btn) {
+            const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+            
+            // Close other FAQs
+            document.querySelectorAll('.faq-question').forEach(item => {
+                item.setAttribute('aria-expanded', 'false');
+                const ans = item.nextElementSibling;
+                if (ans) ans.style.maxHeight = null;
+            });
+
+            // Toggle selected FAQ
+            if (!isExpanded) {
+                btn.setAttribute('aria-expanded', 'true');
+                const answer = btn.nextElementSibling;
+                if (answer) {
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

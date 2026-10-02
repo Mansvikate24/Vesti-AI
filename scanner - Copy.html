@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Scan QR code or enter garment code to try on instantly in VestiAI virtual dressing room.">
+    <title>Garment Scanner | VestiAI</title>
+
+    <!-- Global Luxury CSS -->
+    <link rel="stylesheet" href="css/global.css">
+</head>
+
+<body class="auth-guard-pending">
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="home.html" class="logo">
+                Vesti<span>AI</span> <span class="sparkle">✨</span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="home.html">Home</a>
+                <a href="home.html#categories">Categories</a>
+                <a href="home.html#products">Collection</a>
+                <a href="tryon.html">Virtual Try-On</a>
+                <a href="orders.html">Orders</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="cart.html" class="nav-cart-btn" aria-label="Shopping Cart">
+                    🛒
+                </a>
+                <a href="login.html" class="login-btn">Login</a>
+                <a href="register.html" class="signup-btn">Sign Up</a>
+            </div>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+        </div>
+    </header>
+
+    <!-- ================= SCANNER SECTION ================= -->
+    <main class="auth-container" style="padding: 60px 20px;">
+        <div class="auth-card" style="max-width: 580px; text-align: center;">
+
+            <div class="auth-icon">
+                📷
+            </div>
+
+            <div class="auth-heading">
+                <span>INSTANT STUDIO FITTING</span>
+                <h1 class="font-heading">Garment QR Scanner</h1>
+                <p>Scan the QR tag in a physical store or enter the garment code to launch Virtual Try-On.</p>
+            </div>
+
+            <div style="margin: 28px 0; padding: 32px; border: 2px dashed rgba(236, 72, 153, 0.4); border-radius: var(--radius-xl); background: rgba(236, 72, 153, 0.03);">
+                <div style="font-size: 3rem; margin-bottom: 12px;">🤳</div>
+                <h3 style="margin-bottom: 8px;">Direct Virtual Try-On</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">
+                    Ready to see how outfits look on you right now?
+                </p>
+                <a href="tryon.html" class="primary-btn" style="width: 100%; padding: 14px;">
+                    ✨ Launch Virtual Try-On Studio
+                </a>
+            </div>
+
+            <div style="margin-top: 24px;">
+                <label for="manualCode" style="font-weight: 600; font-size: 0.9rem; display: block; margin-bottom: 8px; text-align: left;">
+                    Or enter Garment Code:
+                </label>
+                <div style="display: flex; gap: 10px;">
+                    <input 
+                        type="text" 
+                        id="manualCode" 
+                        placeholder="e.g. crimson-dress-02" 
+                        style="flex: 1; padding: 12px 16px; border-radius: var(--radius-md); border: 1px solid var(--card-border);"
+                    >
+                    <button type="button" id="lookupCodeBtn" class="secondary-btn" style="background: var(--dark); color: white; border: none;">
+                        Find & Try
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container footer-bottom">
+            <p>© 2026 VestiAI. All Rights Reserved.</p>
+            <p>Smart Fashion Computer Vision</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script type="module" src="js/auth-guard.js"></script>
+    <script>
+        document.getElementById("lookupCodeBtn").addEventListener("click", () => {
+            const code = document.getElementById("manualCode").value.trim();
+            if (code) {
+                window.location.href = `tryon.html?id=${encodeURIComponent(code)}`;
+            } else {
+                window.location.href = "tryon.html";
+            }
+        });
+    </script>
+</body>
+</html>
